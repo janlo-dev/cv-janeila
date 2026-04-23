@@ -149,6 +149,10 @@
         @media print {
             body {
                 background-color: white;
+
+                .no-print {
+                    display: none;
+                }
             }
 
             .container {
@@ -346,6 +350,7 @@
                     </ul>
                 </section>
             </div>
+            <button onclick="window.print()" class="no-print">Descargar en PDF</button>
         </div>
     </div>
 </body>
