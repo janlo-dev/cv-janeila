@@ -155,24 +155,116 @@
             border-top: 1px solid #eee;
         }
 
+        /* Selector de Idioma Flotante - Escritorio */
+        .language-switcher {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background-color: #ffffff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #eef2f5;
+        }
+
+        .lang-link {
+            text-decoration: none;
+            font-size: 9.5pt;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            color: #7f8c8d;
+            letter-spacing: 0.5px;
+            transition: color 0.2s ease;
+        }
+
+        .lang-link:hover {
+            color: #2c3e50;
+        }
+
+        .lang-link.active {
+            color: #3498db;
+            pointer-events: none;
+        }
+
+        .lang-divider {
+            color: #ddd;
+            font-size: 9pt;
+        }
+
+        /* Botón de impresión web */
+        button.no-print {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        button.no-print:hover {
+            background-color: #2980b9;
+        }
+
+        /* Diseño Adaptativo (Responsive para pantallas medianas/pequeñas) */
+        @media (max-width: 1200px) {
+            .language-switcher {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                box-shadow: none;
+                background-color: rgba(255, 255, 255, 0.15);
+                border: none;
+            }
+
+            .lang-link {
+                color: #ecf0f1;
+            }
+
+            .lang-link:hover {
+                color: #ffffff;
+            }
+
+            .lang-link.active {
+                color: #3498db;
+            }
+
+            .lang-divider {
+                color: #7f8c8d;
+            }
+        }
+
+        /* Estilos específicos de impresión (Al exportar a PDF) */
         @media print {
             body {
                 background-color: white;
-
-                .no-print {
-                    display: none;
-                }
             }
 
             .container {
                 box-shadow: none;
                 margin: 0;
             }
+
+            .no-print {
+                display: none !important;
+            }
         }
     </style>
 </head>
 
 <body>
+    <!-- Selector de idioma flotante -->
+    <div class="language-switcher no-print">
+        <a href="index.html" class="lang-link active">ES</a>
+        <span class="lang-divider">|</span>
+        <a href="en.html" class="lang-link">EN</a>
+    </div>
+
     <div class="container">
         <header>
             <h1>Juan Antonio Neila Lorenzo</h1>
@@ -195,7 +287,8 @@
                     sistemas legacy, optimización de APIs y automatización en entornos <strong>DevOps</strong>.
                     Trayectoria sólida en sectores críticos como Banca, Energía y Retail, aportando mejoras medibles en
                     rendimiento, estabilidad y eficiencia operativa. Enfoque en calidad de código, escalabilidad y
-                    entrega continua.</p>
+                    entrega continua.
+                </p>
             </section>
 
             <section id="experiencia">
@@ -213,8 +306,8 @@
                         <li>Resolución de incidencias críticas y coordinación directa con stakeholders del cliente.</li>
                         <li>Mantenimiento de estándares de calidad mediante <strong>JUnit, Mockito y SonarQube</strong>.
                         </li>
-                        <li><strong>Hito:</strong>
-                            Mejora de estabilidad en procesos clave reduciendo incidencias recurrentes.</li>
+                        <li><strong>Hito:</strong> Mejora de estabilidad en procesos clave reduciendo incidencias
+                            recurrentes.</li>
                     </ul>
                 </div>
 
@@ -226,14 +319,12 @@
                     <div class="company">ZEMSANIA / UST | Cliente: BBVA (Madrid)</div>
                     <ul>
                         <li>Desarrollo de evolutivos de<strong> monitoreo proactivo</strong> para garantizar la
-                            estabilidad del core
-                            bancario.</li>
+                            estabilidad del core bancario.</li>
                         <li>Automatización de alertas y despliegues controlados en entornos críticos.</li>
                         <li>Gestión de <strong>pipelines CI/CD</strong> con Jenkins y control de calidad con SonarQube.
                         </li>
                         <li><strong>Hito:</strong> Reducción del <strong>30% en tiempos de respuesta</strong> mediante
-                            alertas
-                            automatizadas.</li>
+                            alertas automatizadas.</li>
                     </ul>
                 </div>
 
@@ -245,8 +336,7 @@
                     <div class="company">AYESA ADVANCED TECHNOLOGIES (Sevilla)</div>
                     <ul>
                         <li><strong>Ingeniería inversa y modernización:</strong> Re-arquitectura completa de sistemas
-                            .NET hacia microservicios escalables con <strong>Java Spring Boot</strong>.
-                        </li>
+                            .NET hacia microservicios escalables con <strong>Java Spring Boot</strong>.</li>
                         <li><strong>Diseño de Base de Datos:</strong> Modelado y creación desde cero de estructuras de
                             datos optimizadas, eliminando deuda técnica del sistema legado.</li>
                         <li><strong>Desarrollo Frontend:</strong> Implementación de interfaces reactivas y modernas
@@ -255,7 +345,6 @@
                             en soluciones de software robustas y mantenibles.</li>
                         <li><strong>Hito:</strong> Migración de la plataforma sin interrupción del servicio,
                             partiendo únicamente de documentación técnica.</li>
-                    </ul>
                     </ul>
                 </div>
 
@@ -271,8 +360,7 @@
                             disponibilidad.</li>
                         <li>Resolución de incidencias críticas y coordinación directa con stakeholders del cliente.</li>
                         <li>Mantenimiento de estándares de calidad mediante <strong>JUnit, Mockito, Jasmine, Karma y
-                                SonarQube</strong>.
-                        </li>
+                                SonarQube</strong>.</li>
                     </ul>
                 </div>
 
@@ -295,8 +383,7 @@
                     <div class="company">PRACTICAS GRADO SUPERIOR DAW | Clientes: Santander UK</div>
                     <ul>
                         <li>Ciclo completo para el desarrollo con la tecnología <strong>banksphere</strong> para
-                            procesos financieros.
-                        </li>
+                            procesos financieros.</li>
                     </ul>
                 </div>
             </section>
@@ -342,7 +429,7 @@
                         <li><strong>RPA Developer Advanced</strong> - UiPath (2019)</li>
                         <li><strong>Grado Sup. Desarrollo Aplicaciones Web</strong> - IES V. del Jerte (2018-2020) -
                             Pendiente de Proyecto de Fin de Ciclo</li>
-                        <li><strong>Licenciatura en Historia</strong> - Universidad de Extremadura(2003-2008) - Cursada
+                        <li><strong>Licenciatura en Historia</strong> - Universidad de Extremadura (2003-2008) - Cursada
                             hasta 5º Curso</li>
                     </ul>
                 </section>
@@ -359,7 +446,9 @@
                     </ul>
                 </section>
             </div>
+
             <button onclick="window.print()" class="no-print">Descargar en PDF</button>
+
             <footer>
                 <p>© 2026 Juan Antonio Neila — Desplegado con GitHub Pages</p>
             </footer>
