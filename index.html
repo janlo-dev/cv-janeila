@@ -188,6 +188,12 @@
         .lang-link.active {
             color: #3498db;
             pointer-events: none;
+            /* Esto evita clics repetidos en el idioma ya activo */
+        }
+
+        .lang-link.active {
+            color: #3498db;
+            pointer-events: none;
         }
 
         .lang-divider {
@@ -260,200 +266,431 @@
 <body>
     <!-- Selector de idioma flotante -->
     <div class="language-switcher no-print">
-        <a href="index.html" class="lang-link active">ES</a>
+        <a id="btn-es" href="#es" class="lang-link active"
+            onclick="document.getElementById('cv-en').style.display='none'; document.getElementById('cv-es').style.display='block'; 
+		     document.getElementById('btn-en').classList.remove('active'); this.classList.add('active'); return false;">ES</a>
         <span class="lang-divider">|</span>
-        <a href="english.html" class="lang-link">EN</a>
+        <a id="btn-en" href="#en" class="lang-link"
+            onclick="document.getElementById('cv-es').style.display='none'; document.getElementById('cv-en').style.display='block'; 
+		     document.getElementById('btn-es').classList.remove('active'); this.classList.add('active'); return false;">EN</a>
     </div>
-
-    <div class="container">
-        <header>
-            <h1>Juan Antonio Neila Lorenzo</h1>
-            <div class="subtitle">Backend Developer | Java & Microservices</div>
-            <div class="contact-info">
-                <span>📍 Cáceres, España</span>
-                <span>📞 (+34) 650 289 622</span>
-                <span>✉️ <a href="mailto:jneilalorenzo@gmail.com">jneilalorenzo@gmail.com</a></span>
-                <span>🔗 <a href="https://www.linkedin.com/in/janeila">linkedin.com/in/janeila</a></span>
-                <span>💻 <a href="https://github.com/janlo-dev">github.com/janlo-dev</a></span>
-            </div>
-        </header>
-
-        <div class="main-content">
-            <section id="perfil">
-                <h2>Perfil Profesional</h2>
-                <p style="font-size: 10.5pt; text-align: justify; margin: 0;">
-                    Backend Developer con +5 años de experiencia, especializado en el ecosistema <strong>Backend
-                        (Java, Spring Boot)</strong> y arquitecturas de microservicios. Experto en modernización de
-                    sistemas legacy, optimización de APIs y automatización en entornos <strong>DevOps</strong>.
-                    Trayectoria sólida en sectores críticos como Banca, Energía y Retail, aportando mejoras medibles en
-                    rendimiento, estabilidad y eficiencia operativa. Enfoque en calidad de código, escalabilidad y
-                    entrega continua.
-                </p>
-            </section>
-
-            <section id="experiencia">
-                <h2>Experiencia Profesional</h2>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <span>Desarrollador Senior</span>
-                        <span>06/2025 – 01/2026</span>
-                    </div>
-                    <div class="company">CAPGEMINI | Cliente: CONSUM (Sevilla)</div>
-                    <ul>
-                        <li>Optimización de lógica de negocio y creación de evolutivos en entornos de <strong>alta
-                                disponibilidad</strong> para el sector <strong>Retail</strong>.</li>
-                        <li>Resolución de incidencias críticas y coordinación directa con stakeholders del cliente.</li>
-                        <li>Mantenimiento de estándares de calidad mediante <strong>JUnit, Mockito y SonarQube</strong>.
-                        </li>
-                        <li><strong>Hito:</strong> Mejora de estabilidad en procesos clave reduciendo incidencias
-                            recurrentes.</li>
-                    </ul>
+    <!-- ========================================== -->
+    <!-- VISTA EN ESPAÑOL                           -->
+    <!-- ========================================== -->
+    <div id="cv-es">
+        <div class="container">
+            <header>
+                <h1>Juan Antonio Neila Lorenzo</h1>
+                <div class="subtitle">Backend Developer | Java & Microservices</div>
+                <div class="contact-info">
+                    <span>📍 Cáceres, España</span>
+                    <span>📞 (+34) 650 289 622</span>
+                    <span>✉️ <a href="mailto:jneilalorenzo@gmail.com">jneilalorenzo@gmail.com</a></span>
+                    <span>🔗 <a href="https://www.linkedin.com/in/janeila">linkedin.com/in/janeila</a></span>
+                    <span>💻 <a href="https://github.com/janlo-dev">github.com/janlo-dev</a></span>
                 </div>
+            </header>
 
-                <div class="experience-item">
-                    <div class="job-header">
-                        <span>DevOps Engineer</span>
-                        <span>01/2023 – 02/2025</span>
-                    </div>
-                    <div class="company">ZEMSANIA / UST | Cliente: BBVA (Madrid)</div>
-                    <ul>
-                        <li>Desarrollo de evolutivos de<strong> monitoreo proactivo</strong> para garantizar la
-                            estabilidad del core bancario.</li>
-                        <li>Automatización de alertas y despliegues controlados en entornos críticos.</li>
-                        <li>Gestión de <strong>pipelines CI/CD</strong> con Jenkins y control de calidad con SonarQube.
-                        </li>
-                        <li><strong>Hito:</strong> Reducción del <strong>30% en tiempos de respuesta</strong> mediante
-                            alertas automatizadas.</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <span>Desarrollador Senior</span>
-                        <span>09/2021 – 05/2022</span>
-                    </div>
-                    <div class="company">AYESA ADVANCED TECHNOLOGIES (Sevilla)</div>
-                    <ul>
-                        <li><strong>Ingeniería inversa y modernización:</strong> Re-arquitectura completa de sistemas
-                            .NET hacia microservicios escalables con <strong>Java Spring Boot</strong>.</li>
-                        <li><strong>Diseño de Base de Datos:</strong> Modelado y creación desde cero de estructuras de
-                            datos optimizadas, eliminando deuda técnica del sistema legado.</li>
-                        <li><strong>Desarrollo Frontend:</strong> Implementación de interfaces reactivas y modernas
-                            utilizando <strong>ReactJS</strong> para mejorar la experiencia de usuario final.</li>
-                        <li><strong>Análisis Funcional:</strong> Transformación de especificaciones técnicas complejas
-                            en soluciones de software robustas y mantenibles.</li>
-                        <li><strong>Hito:</strong> Migración de la plataforma sin interrupción del servicio,
-                            partiendo únicamente de documentación técnica.</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <span>Desarrollador Junior</span>
-                        <span>01/2020 – 09/2021</span>
-                    </div>
-                    <div class="company">EVERIS (NTT DATA) | Clientes: Iberdrola</div>
-                    <ul>
-                        <li>Desarrollo Full Stack <strong>(Angular/Java)</strong> para el sector energético.</li>
-                        <li>Optimización de lógica de negocio y creación de evolutivos en entornos de alta
-                            disponibilidad.</li>
-                        <li>Resolución de incidencias críticas y coordinación directa con stakeholders del cliente.</li>
-                        <li>Mantenimiento de estándares de calidad mediante <strong>JUnit, Mockito, Jasmine, Karma y
-                                SonarQube</strong>.</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <span>Becario</span>
-                        <span>10/2019 – 12/2019</span>
-                    </div>
-                    <div class="company">EVERIS (NTT DATA)</div>
-                    <ul>
-                        <li>Automatización de procesos mediante <strong>UiPath y Blue Prism</strong>.</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="job-header">
-                        <span>Desarrollador Junior / Becario</span>
-                        <span>03/2020 – 06/2020</span>
-                    </div>
-                    <div class="company">PRACTICAS GRADO SUPERIOR DAW | Clientes: Santander UK</div>
-                    <ul>
-                        <li>Ciclo completo para el desarrollo con la tecnología <strong>banksphere</strong> para
-                            procesos financieros.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="habilidades">
-                <h2>Habilidades Técnicas</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <strong>Backend & Arquitectura</strong>
-                        <span class="badge">Java</span> <span class="badge">Spring Boot</span> <span
-                            class="badge">Hibernate</span>
-                        <span class="badge">Microservicios</span> <span class="badge">APIs REST</span> <span
-                            class="badge">JPA</span>
-                    </div>
-                    <div class="skill-category">
-                        <strong>Frontend & Web</strong>
-                        <span class="badge">ReactJS</span> <span class="badge">Angular</span> <span
-                            class="badge">HTML5/CSS</span>
-                        <span class="badge">JavaScript</span> <span class="badge">TypeScript</span>
-                    </div>
-                    <div class="skill-category">
-                        <strong>Bases de Datos & DevOps</strong>
-                        <span class="badge">SQL/PostgreSQL</span> <span class="badge">MongoDB</span> <span
-                            class="badge">Jenkins</span>
-                        <span class="badge">Docker</span> <span class="badge">Git</span> <span
-                            class="badge">SonarQube</span>
-                    </div>
-                    <div class="skill-category">
-                        <strong>Metodologías & RPA</strong>
-                        <span class="badge">Scrum (Certified)</span> <span class="badge">Agile/Kanban</span> <span
-                            class="badge">UiPath</span>
-                        <span class="badge">Blue Prism</span> <span class="badge">Jira</span>
-                    </div>
-                </div>
-            </section>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-                <section>
-                    <h2>Certificaciones & Educación</h2>
-                    <ul style="padding-left: 15px;">
-                        <li><strong>Curso de Preparación: Scrum Master Professional Certified (SMPC)</strong> - EIGP
-                            (2023)</li>
-                        <li><strong>RPA Developer Advanced</strong> - UiPath (2019)</li>
-                        <li><strong>Grado Sup. Desarrollo Aplicaciones Web</strong> - IES V. del Jerte (2018-2020) -
-                            Pendiente de Proyecto de Fin de Ciclo</li>
-                        <li><strong>Licenciatura en Historia</strong> - Universidad de Extremadura (2003-2008) - Cursada
-                            hasta 5º Curso</li>
-                    </ul>
+            <div class="main-content">
+                <section id="perfil">
+                    <h2>Perfil Profesional</h2>
+                    <p style="font-size: 10.5pt; text-align: justify; margin: 0;">
+                        Backend Developer con +5 años de experiencia, especializado en el ecosistema <strong>Backend
+                            (Java, Spring Boot)</strong> y arquitecturas de microservicios. Experto en modernización de
+                        sistemas legacy, optimización de APIs y automatización en entornos <strong>DevOps</strong>.
+                        Trayectoria sólida en sectores críticos como Banca, Energía y Retail, aportando mejoras medibles
+                        en
+                        rendimiento, estabilidad y eficiencia operativa. Enfoque en calidad de código, escalabilidad y
+                        entrega continua.
+                    </p>
                 </section>
-                <section>
-                    <h2>Idiomas</h2>
-                    <ul style="padding-left: 15px;">
-                        <li><strong>Inglés (B1):</strong> Inmersión lingüística en el Reino Unido:
-                            <div style="margin-top: 5px; margin-left: 10px; line-height: 1.6;">
-                                • <strong>Londres</strong> (Edwards School)<br>
-                                • <strong>Leicester</strong> (Bespoke)
-                            </div>
-                        </li>
-                        <li><strong>Portugués (A2)</strong> | <strong>Español (Nativo)</strong></li>
-                    </ul>
+
+                <section id="experiencia">
+                    <h2>Experiencia Profesional</h2>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <span>Desarrollador Senior</span>
+                            <span>06/2025 – 01/2026</span>
+                        </div>
+                        <div class="company">CAPGEMINI | Cliente: CONSUM (Sevilla)</div>
+                        <ul>
+                            <li>Optimización de lógica de negocio y creación de evolutivos en entornos de <strong>alta
+                                    disponibilidad</strong> para el sector <strong>Retail</strong>.</li>
+                            <li>Resolución de incidencias críticas y coordinación directa con stakeholders del cliente.
+                            </li>
+                            <li>Mantenimiento de estándares de calidad mediante <strong>JUnit, Mockito y
+                                    SonarQube</strong>.
+                            </li>
+                            <li><strong>Hito:</strong> Mejora de estabilidad en procesos clave reduciendo incidencias
+                                recurrentes.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <span>DevOps Engineer</span>
+                            <span>01/2023 – 02/2025</span>
+                        </div>
+                        <div class="company">ZEMSANIA / UST | Cliente: BBVA (Madrid)</div>
+                        <ul>
+                            <li>Desarrollo de evolutivos de<strong> monitoreo proactivo</strong> para garantizar la
+                                estabilidad del core bancario.</li>
+                            <li>Automatización de alertas y despliegues controlados en entornos críticos.</li>
+                            <li>Gestión de <strong>pipelines CI/CD</strong> con Jenkins y control de calidad con
+                                SonarQube.
+                            </li>
+                            <li><strong>Hito:</strong> Reducción del <strong>30% en tiempos de respuesta</strong>
+                                mediante
+                                alertas automatizadas.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <span>Desarrollador Senior</span>
+                            <span>09/2021 – 05/2022</span>
+                        </div>
+                        <div class="company">AYESA ADVANCED TECHNOLOGIES (Sevilla)</div>
+                        <ul>
+                            <li><strong>Ingeniería inversa y modernización:</strong> Re-arquitectura completa de
+                                sistemas
+                                .NET hacia microservicios escalables con <strong>Java Spring Boot</strong>.</li>
+                            <li><strong>Diseño de Base de Datos:</strong> Modelado y creación desde cero de estructuras
+                                de
+                                datos optimizadas, eliminando deuda técnica del sistema legado.</li>
+                            <li><strong>Desarrollo Frontend:</strong> Implementación de interfaces reactivas y modernas
+                                utilizando <strong>ReactJS</strong> para mejorar la experiencia de usuario final.</li>
+                            <li><strong>Análisis Funcional:</strong> Transformación de especificaciones técnicas
+                                complejas
+                                en soluciones de software robustas y mantenibles.</li>
+                            <li><strong>Hito:</strong> Migración de la plataforma sin interrupción del servicio,
+                                partiendo únicamente de documentación técnica.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <span>Desarrollador Junior</span>
+                            <span>01/2020 – 09/2021</span>
+                        </div>
+                        <div class="company">EVERIS (NTT DATA) | Clientes: Iberdrola</div>
+                        <ul>
+                            <li>Desarrollo Full Stack <strong>(Angular/Java)</strong> para el sector energético.</li>
+                            <li>Optimización de lógica de negocio y creación de evolutivos en entornos de alta
+                                disponibilidad.</li>
+                            <li>Resolución de incidencias críticas y coordinación directa con stakeholders del cliente.
+                            </li>
+                            <li>Mantenimiento de estándares de calidad mediante <strong>JUnit, Mockito, Jasmine, Karma y
+                                    SonarQube</strong>.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <span>Becario</span>
+                            <span>10/2019 – 12/2019</span>
+                        </div>
+                        <div class="company">EVERIS (NTT DATA)</div>
+                        <ul>
+                            <li>Automatización de procesos mediante <strong>UiPath y Blue Prism</strong>.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <span>Desarrollador Junior / Becario</span>
+                            <span>03/2020 – 06/2020</span>
+                        </div>
+                        <div class="company">PRACTICAS GRADO SUPERIOR DAW | Clientes: Santander UK</div>
+                        <ul>
+                            <li>Ciclo completo para el desarrollo con la tecnología <strong>banksphere</strong> para
+                                procesos financieros.</li>
+                        </ul>
+                    </div>
                 </section>
+
+                <section id="habilidades">
+                    <h2>Habilidades Técnicas</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <strong>Backend & Arquitectura</strong>
+                            <span class="badge">Java</span> <span class="badge">Spring Boot</span> <span
+                                class="badge">Hibernate</span>
+                            <span class="badge">Microservicios</span> <span class="badge">APIs REST</span> <span
+                                class="badge">JPA</span>
+                        </div>
+                        <div class="skill-category">
+                            <strong>Frontend & Web</strong>
+                            <span class="badge">ReactJS</span> <span class="badge">Angular</span> <span
+                                class="badge">HTML5/CSS</span>
+                            <span class="badge">JavaScript</span> <span class="badge">TypeScript</span>
+                        </div>
+                        <div class="skill-category">
+                            <strong>Bases de Datos & DevOps</strong>
+                            <span class="badge">SQL/PostgreSQL</span> <span class="badge">MongoDB</span> <span
+                                class="badge">Jenkins</span>
+                            <span class="badge">Docker</span> <span class="badge">Git</span> <span
+                                class="badge">SonarQube</span>
+                        </div>
+                        <div class="skill-category">
+                            <strong>Metodologías & RPA</strong>
+                            <span class="badge">Scrum (Certified)</span> <span class="badge">Agile/Kanban</span> <span
+                                class="badge">UiPath</span>
+                            <span class="badge">Blue Prism</span> <span class="badge">Jira</span>
+                        </div>
+                    </div>
+                </section>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                    <section>
+                        <h2>Certificaciones & Educación</h2>
+                        <ul style="padding-left: 15px;">
+                            <li><strong>Curso de Preparación: Scrum Master Professional Certified (SMPC)</strong> - EIGP
+                                (2023)</li>
+                            <li><strong>RPA Developer Advanced</strong> - UiPath (2019)</li>
+                            <li><strong>Grado Sup. Desarrollo Aplicaciones Web</strong> - IES V. del Jerte (2018-2020) -
+                                Pendiente de Proyecto de Fin de Ciclo</li>
+                            <li><strong>Licenciatura en Historia</strong> - Universidad de Extremadura (2003-2008) -
+                                Cursada
+                                hasta 5º Curso</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Idiomas</h2>
+                        <ul style="padding-left: 15px;">
+                            <li><strong>Inglés (B1):</strong> Inmersión lingüística en el Reino Unido:
+                                <div style="margin-top: 5px; margin-left: 10px; line-height: 1.6;">
+                                    • <strong>Londres</strong> (Edwards School)<br>
+                                    • <strong>Leicester</strong> (Bespoke)
+                                </div>
+                            </li>
+                            <li><strong>Portugués (A2)</strong> | <strong>Español (Nativo)</strong></li>
+                        </ul>
+                    </section>
+                </div>
+
+                <button onclick="window.print()" class="no-print">Descargar en PDF</button>
+
+                <footer>
+                    <p>© 2026 Juan Antonio Neila — Desplegado con GitHub Pages</p>
+                </footer>
             </div>
-
-            <button onclick="window.print()" class="no-print">Descargar en PDF</button>
-
-            <footer>
-                <p>© 2026 Juan Antonio Neila — Desplegado con GitHub Pages</p>
-            </footer>
         </div>
     </div>
+
+    <!-- ========================================== -->
+    <!-- VISTA EN INGLÉS                            -->
+    <!-- ========================================== -->
+    <div id="cv-en" style="display: none;">
+
+        <div class="container">
+            <header>
+                <h1>Juan Antonio Neila Lorenzo</h1>
+                <div class="subtitle">Backend Developer | Java & Microservices</div>
+                <div class="contact-info">
+                    <span>📍 Cáceres, Spain</span>
+                    <span>📞 (+34) 650 289 622</span>
+                    <span>✉️ <a href="mailto:jneilalorenzo@gmail.com">jneilalorenzo@gmail.com</a></span>
+                    <span>🔗 <a href="https://www.linkedin.com/in/janeila">linkedin.com/in/janeila</a></span>
+                    <span>💻 <a href="https://github.com/janlo-dev">github.com/janlo-dev</a></span>
+                </div>
+            </header>
+
+            <div class="main-content">
+                <section id="perfil">
+                    <h2>Professional Summary</h2>
+                    <p style="font-size: 10.5pt; text-align: justify; margin: 0;">
+                        Backend Developer with +5 years of experience, specialized in the <strong>Backend ecosystem
+                            (Java,
+                            Spring Boot)</strong> and microservices architectures. Expert in legacy system
+                        modernization,
+                        API optimization, and automation within <strong>DevOps</strong> environments. Proven track
+                        record in
+                        critical sectors such as Banking, Energy, and Retail, delivering measurable improvements in
+                        performance, stability, and operational efficiency. Strong focus on code quality, scalability,
+                        and
+                        continuous delivery.
+                    </p>
+                </section>
+
+                <section id="experiencia">
+                    <h2>Professional Experience</h2>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <span>Senior Developer</span>
+                            <span>06/2025 – 01/2026</span>
+                        </div>
+                        <div class="company">CAPGEMINI | Client: CONSUM (Seville)</div>
+                        <ul>
+                            <li>Optimized business logic and developed scalable evolutionary features in
+                                <strong>high-availability</strong> environments for the <strong>Retail</strong> sector.
+                            </li>
+                            <li>Resolved critical incidents and coordinated directly with client stakeholders.</li>
+                            <li>Maintained strict code quality standards utilizing <strong>JUnit, Mockito, and
+                                    SonarQube</strong>.</li>
+                            <li><strong>Milestone:</strong> Enhanced system stability across core processes,
+                                significantly
+                                reducing recurring incidents.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <span>DevOps Engineer</span>
+                            <span>01/2023 – 02/2025</span>
+                        </div>
+                        <div class="company">ZEMSANIA / UST | Client: BBVA (Madrid)</div>
+                        <ul>
+                            <li>Developed evolutionary features for <strong>proactive monitoring</strong> systems to
+                                ensure
+                                the core banking platform's stability.</li>
+                            <li>Automated alerts and managed controlled deployments in critical production environments.
+                            </li>
+                            <li>Managed <strong>CI/CD pipelines</strong> using Jenkins and enforced quality gates with
+                                SonarQube.</li>
+                            <li><strong>Milestone:</strong> Achieved a <strong>30% reduction in response times</strong>
+                                through automated alerting systems.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <span>Senior Developer</span>
+                            <span>09/2021 – 05/2022</span>
+                        </div>
+                        <div class="company">AYESA ADVANCED TECHNOLOGIES (Seville)</div>
+                        <ul>
+                            <li><strong>Reverse Engineering & Modernization:</strong> Led the complete re-architecture
+                                of
+                                legacy .NET systems into scalable microservices using <strong>Java Spring Boot</strong>.
+                            </li>
+                            <li><strong>Database Design:</strong> Modeled and developed optimized data structures from
+                                scratch, effectively eliminating legacy system technical debt.</li>
+                            <li><strong>Frontend Development:</strong> Implemented responsive and modern user interfaces
+                                utilizing <strong>ReactJS</strong> to optimize the end-user experience.</li>
+                            <li><strong>Functional Analysis:</strong> Transformed complex technical specifications into
+                                robust, scalable, and maintainable software solutions.</li>
+                            <li><strong>Milestone:</strong> Successfully migrated the entire platform without service
+                                disruption, relying solely on legacy technical documentation.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <span>Junior Developer</span>
+                            <span>01/2020 – 09/2021</span>
+                        </div>
+                        <div class="company">EVERIS (NTT DATA) | Client: Iberdrola</div>
+                        <ul>
+                            <li>Full Stack development <strong>(Angular/Java)</strong> within the energy sector.</li>
+                            <li>Optimized business logic and created evolutionary features in high-availability
+                                environments.</li>
+                            <li>Handled critical incident resolution and established direct coordination with client
+                                stakeholders.</li>
+                            <li>Maintained high-quality software standards using <strong>JUnit, Mockito, Jasmine, Karma,
+                                    and
+                                    SonarQube</strong>.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <span>Intern</span>
+                            <span>10/2019 – 12/2019</span>
+                        </div>
+                        <div class="company">EVERIS (NTT DATA)</div>
+                        <ul>
+                            <li>Automated business processes utilizing RPA technologies such as <strong>UiPath and Blue
+                                    Prism</strong>.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <span>Junior Developer / Intern</span>
+                            <span>03/2020 – 06/2020</span>
+                        </div>
+                        <div class="company">HIGHER TECHNICAL DEGREE WORK PLACEMENT (DAW) | Client: Santander UK</div>
+                        <ul>
+                            <li>Participated in the full development lifecycle utilizing <strong>banksphere</strong>
+                                technology for financial application processes.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="habilidades">
+                    <h2>Technical Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <strong>Backend & Architecture</strong>
+                            <span class="badge">Java</span> <span class="badge">Spring Boot</span> <span
+                                class="badge">Hibernate</span>
+                            <span class="badge">Microservices</span> <span class="badge">REST APIs</span> <span
+                                class="badge">JPA</span>
+                        </div>
+                        <div class="skill-category">
+                            <strong>Frontend & Web</strong>
+                            <span class="badge">ReactJS</span> <span class="badge">Angular</span> <span
+                                class="badge">HTML5/CSS</span>
+                            <span class="badge">JavaScript</span> <span class="badge">TypeScript</span>
+                        </div>
+                        <div class="skill-category">
+                            <strong>Databases & DevOps</strong>
+                            <span class="badge">SQL/PostgreSQL</span> <span class="badge">MongoDB</span> <span
+                                class="badge">Jenkins</span>
+                            <span class="badge">Docker</span> <span class="badge">Git</span> <span
+                                class="badge">SonarQube</span>
+                        </div>
+                        <div class="skill-category">
+                            <strong>Methodologies & RPA</strong>
+                            <span class="badge">Scrum (Certified)</span> <span class="badge">Agile/Kanban</span> <span
+                                class="badge">UiPath</span>
+                            <span class="badge">Blue Prism</span> <span class="badge">Jira</span>
+                        </div>
+                    </div>
+                </section>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                    <section>
+                        <h2>Certifications & Education</h2>
+                        <ul style="padding-left: 15px;">
+                            <li><strong>Training Course: Scrum Master Professional Certified (SMPC)</strong> - EIGP
+                                (2023)
+                            </li>
+                            <li><strong>RPA Developer Advanced</strong> - UiPath (2019)</li>
+                            <li><strong>Higher Technical Degree in Web Application Development (DAW)</strong> - IES V.
+                                del
+                                Jerte (2018-2020) - Final Project Pending</li>
+                            <li><strong>Degree in History</strong> - University of Extremadura (2003-2008) - Completed
+                                up to
+                                5th Year</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Languages</h2>
+                        <ul style="padding-left: 15px;">
+                            <li><strong>English (B1):</strong> Language immersion in the United Kingdom:
+                                <div style="margin-top: 5px; margin-left: 10px; line-height: 1.6;">
+                                    • <strong>London</strong> (Edwards School)<br>
+                                    • <strong>Leicester</strong> (Bespoke)
+                                </div>
+                            </li>
+                            <li><strong>Portuguese (A2)</strong> | <strong>Spanish (Native)</strong></li>
+                        </ul>
+                    </section>
+                </div>
+
+                <button onclick="window.print()" class="no-print">Download PDF</button>
+
+                <footer>
+                    <p>© 2026 Juan Antonio Neila — Deployed with GitHub Pages</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
