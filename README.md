@@ -1,6 +1,9 @@
 # CV Interactivo - Juan Antonio Neila
 Este proyecto contiene mi CV profesional en formato web, optimizado para lectura digital e impresión.
 
+## Descripción
+Cv Profesional Juan Antonio Neila Lorenzo
+
 ## Tecnologías utilizadas
 * HTML5 / CSS3 (Diseño Responsive)
 * GitHub Pages (Hosting)
