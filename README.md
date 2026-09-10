@@ -10,3 +10,4 @@ Este proyecto contiene mi CV profesional en formato web, optimizado para lectura
 ## Características
 * **Botón de impresión:** Genera un PDF optimizado mediante CSS `@media print`.
 * **Despliegue automático:** Cualquier cambio en la rama `main` se publica al instante.
+* **Idiomas:** Español e Ingles.
