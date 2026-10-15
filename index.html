@@ -4,758 +4,1166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Juan Antonio Neila Lorenzo - Backend Developer</title>
+    <title>CV_JuanAntonio_Neila_2026_ES</title>
+    <meta name="description"
+        content="Juan Antonio Neila Lorenzo — Backend Developer Java · Spring Boot · Microservicios · DevOps">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --ink: #0f1b2d;
+            --text: #334155;
+            --muted: #64748b;
+            --line: #e2e8f0;
+            --accent: #1d4ed8;
+            --accent-dark: #1e3a8a;
+            --accent-soft: #eef3fe;
+            --chip-bg: #f1f5f9;
+            --page-bg: #eef1f5;
+            --paper: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         @page {
             size: A4;
-            margin: 0;
+            margin: 12mm 0;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+            font-size: 10pt;
             line-height: 1.5;
-            color: #333;
-            background-color: #f4f7f6;
+            color: var(--text);
+            background-color: var(--page-bg);
             margin: 0;
-            padding: 0;
+            padding: 40px 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
 
         .container {
-            width: 210mm;
-            min-height: 297mm;
-            background-color: #ffffff;
+            max-width: 210mm;
+            background-color: var(--paper);
             margin: 0 auto;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            position: relative;
+            padding: 16mm 16mm 10mm;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(15, 27, 45, 0.06), 0 12px 32px rgba(15, 27, 45, 0.08);
+            border-top: 5px solid var(--accent);
         }
 
+        /* ---------- Cabecera ---------- */
         header {
-            background-color: #2c3e50;
-            color: #ffffff;
-            padding: 30px 40px;
-            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 24px;
+            align-items: end;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--line);
         }
 
         h1 {
             margin: 0;
-            font-size: 26pt;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            font-size: 25pt;
+            line-height: 1.1;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--ink);
         }
 
-        .subtitle {
-            font-size: 14pt;
-            color: #3498db;
-            margin-top: 5px;
-            font-weight: bold;
+        .role {
+            margin-top: 8px;
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
         }
 
-        .contact-info {
-            margin-top: 15px;
-            font-size: 10pt;
+        .role span {
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .contact {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: 9pt;
+            display: grid;
+            gap: 3px;
+        }
+
+        .contact li {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            align-items: center;
+            gap: 7px;
+            white-space: nowrap;
         }
 
-        .contact-info a {
-            color: #ecf0f1;
-            text-decoration: none;
+        .contact a {
+            color: var(--text);
         }
 
-        .main-content {
-            padding: 30px 40px;
+        .icon {
+            width: 13px;
+            height: 13px;
+            flex: none;
+            fill: none;
+            stroke: var(--accent);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
+        /* ---------- Secciones ---------- */
         section {
-            margin-bottom: 25px;
+            margin-top: 20px;
         }
 
         h2 {
-            color: #2c3e50;
-            font-size: 16pt;
-            border-left: 5px solid #3498db;
-            padding-left: 10px;
-            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 0 0 10px;
+            font-size: 9pt;
+            font-weight: 700;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            background-color: #f9f9f9;
+            color: var(--accent-dark);
         }
 
-        .experience-item {
-            margin-bottom: 20px;
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--line);
         }
 
-        .job-header {
+        h3 {
+            margin: 0;
+            font-size: 10.5pt;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .summary {
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .summary strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        /* ---------- Logros ---------- */
+        .kpis {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .kpi {
+            background: var(--accent-soft);
+            border-radius: 6px;
+            padding: 10px 14px;
+        }
+
+        .kpi-value {
+            font-size: 17pt;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            color: var(--accent-dark);
+        }
+
+        .kpi-label {
+            margin-top: 3px;
+            font-size: 8.5pt;
+            line-height: 1.4;
+            color: var(--text);
+        }
+
+        /* ---------- Experiencia ---------- */
+        .job {
+            padding: 10px 0 10px 16px;
+            border-left: 2px solid var(--line);
+            position: relative;
+        }
+
+        .job::before {
+            content: "";
+            position: absolute;
+            left: -5px;
+            top: 16px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--paper);
+            border: 2px solid var(--accent);
+        }
+
+        .job-head {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            font-weight: bold;
-            color: #2980b9;
+            gap: 12px;
         }
 
-        .company {
-            color: #7f8c8d;
-            font-style: italic;
-            margin-bottom: 5px;
+        .dates {
+            font-size: 8.5pt;
+            font-weight: 600;
+            color: var(--muted);
+            white-space: nowrap;
+            font-variant-numeric: tabular-nums;
         }
 
-        ul {
-            margin: 5px 0;
-            padding-left: 20px;
+        .org {
+            margin-top: 1px;
+            font-size: 9.5pt;
+            font-weight: 600;
+            color: var(--accent);
         }
 
-        li {
-            margin-bottom: 3px;
-            font-size: 10.5pt;
+        .org .place {
+            color: var(--muted);
+            font-weight: 400;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+        .job ul {
+            margin: 6px 0 0;
+            padding-left: 16px;
         }
 
-        .skill-category {
+        .job li {
+            margin-bottom: 2px;
+        }
+
+        .job li::marker {
+            color: var(--accent);
+        }
+
+        .milestone {
+            margin-top: 6px;
+            padding: 5px 10px;
+            background: var(--accent-soft);
+            border-radius: 4px;
+            font-size: 9.5pt;
+        }
+
+        .milestone b {
+            color: var(--accent-dark);
+            font-weight: 700;
+        }
+
+        .job.compact {
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+
+        .job.compact h3 {
             font-size: 10pt;
         }
 
-        .skill-category strong {
-            display: block;
-            color: #2c3e50;
-            margin-bottom: 5px;
+        .job.compact p {
+            margin-top: 2px;
+            font-size: 9.5pt;
         }
 
-        .badge {
-            background-color: #e8f4fd;
-            color: #2980b9;
-            padding: 2px 8px;
-            border-radius: 4px;
+        /* ---------- Proyecto ---------- */
+        .project {
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            padding: 10px 14px;
+        }
+
+        .project p {
+            margin-top: 4px;
+        }
+
+        .project .links {
+            margin-top: 6px;
+            font-size: 9pt;
+        }
+
+        /* ---------- Habilidades ---------- */
+        .skills {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            row-gap: 7px;
+            column-gap: 12px;
+            align-items: baseline;
+        }
+
+        .skills dt {
+            font-size: 9pt;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .skills dd {
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .chip {
             display: inline-block;
-            margin: 2px;
-            font-size: 9pt;
-            border: 1px solid #d1e9f9;
+            padding: 1px 9px;
+            border-radius: 999px;
+            background: var(--chip-bg);
+            border: 1px solid var(--line);
+            font-size: 8.5pt;
+            font-weight: 500;
+            color: var(--ink);
         }
 
-        .gap-note {
-            font-size: 9pt;
-            color: #95a5a6;
+        .footnote {
+            margin-top: 8px;
+            font-size: 8pt;
             font-style: italic;
-            border-top: 1px dashed #ccc;
-            padding-top: 10px;
-            margin-top: 10px;
+            color: var(--muted);
+        }
+
+        /* ---------- Formación / Idiomas ---------- */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 32px;
+        }
+
+        .block-title {
+            margin: 0 0 6px;
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--accent-dark);
+        }
+
+        .entry {
+            margin-bottom: 8px;
+        }
+
+        .entry strong {
+            display: block;
+            color: var(--ink);
+            font-weight: 600;
+            font-size: 9.5pt;
+        }
+
+        .entry .meta {
+            font-size: 8.5pt;
+            color: var(--muted);
+        }
+
+        .status {
+            display: inline-block;
+            margin-top: 2px;
+            padding: 0 7px;
+            border-radius: 3px;
+            font-size: 8pt;
+            font-weight: 600;
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .langs {
+            list-style: none;
+            margin: 0 0 12px;
+            padding: 0;
+            font-size: 9.5pt;
+        }
+
+        .langs li {
+            margin-bottom: 4px;
+        }
+
+        .langs strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        .langs .sub {
+            display: block;
+            padding-left: 12px;
+            font-size: 8.5pt;
+            color: var(--muted);
         }
 
         footer {
-            text-align: center;
-            padding: 20px;
-            color: #666;
-            font-size: 0.8em;
-            margin-top: 20px;
-            border-top: 1px solid #eee;
+            margin-top: 22px;
+            padding-top: 10px;
+            border-top: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            font-size: 8pt;
+            color: var(--muted);
         }
 
-        /* Selector de Idioma Flotante - Escritorio */
+        /* ---------- Controles (solo pantalla) ---------- */
         .language-switcher {
             position: fixed;
-            top: 30px;
-            right: 30px;
-            background-color: #ffffff;
-            padding: 6px 14px;
-            border-radius: 20px;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-            z-index: 9999;
+            top: 24px;
+            right: 24px;
+            z-index: 10;
             display: flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid #eef2f5;
+            padding: 3px;
+            gap: 2px;
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            box-shadow: 0 4px 12px rgba(15, 27, 45, 0.08);
         }
 
         .lang-link {
-            text-decoration: none;
-            font-size: 9.5pt;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: bold;
-            color: #7f8c8d;
-            letter-spacing: 0.5px;
-            transition: color 0.2s ease;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 9pt;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: var(--muted);
         }
 
         .lang-link:hover {
-            color: #2c3e50;
+            text-decoration: none;
+            color: var(--ink);
         }
 
         .lang-link.active {
-            color: #3498db;
-            pointer-events: none;
-            /* Esto evita clics repetidos en el idioma ya activo */
-        }
-
-        .lang-link.active {
-            color: #3498db;
+            background: var(--accent);
+            color: #fff;
             pointer-events: none;
         }
 
-        .lang-divider {
-            color: #ddd;
-            font-size: 9pt;
-        }
-
-        /* Botón de impresión web */
-        button.no-print {
-            background-color: #3498db;
-            color: white;
+        .print-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
             border: none;
-            padding: 8px 15px;
-            border-radius: 4px;
+            border-radius: 6px;
+            background: var(--accent);
+            color: #fff;
+            font: inherit;
+            font-size: 9pt;
+            font-weight: 600;
             cursor: pointer;
-            font-weight: bold;
-            margin-top: 10px;
         }
 
-        button.no-print:hover {
-            background-color: #2980b9;
+        .print-btn:hover {
+            background: var(--accent-dark);
         }
 
-        /* Diseño Adaptativo (Responsive para pantallas medianas/pequeñas) */
-        @media (max-width: 1200px) {
+        .print-btn .icon {
+            stroke: #fff;
+        }
+
+        /* ---------- Responsive ---------- */
+        @media screen and (max-width: 1100px) {
             .language-switcher {
-                position: absolute;
-                top: 15px;
-                right: 15px;
-                box-shadow: none;
-                background-color: rgba(255, 255, 255, 0.15);
-                border: none;
-            }
-
-            .lang-link {
-                color: #ecf0f1;
-            }
-
-            .lang-link:hover {
-                color: #ffffff;
-            }
-
-            .lang-link.active {
-                color: #3498db;
-            }
-
-            .lang-divider {
-                color: #7f8c8d;
+                position: static;
+                width: max-content;
+                margin: 0 auto 16px;
             }
         }
 
-        /* Estilos específicos de impresión (Al exportar a PDF) */
-        @media print {
+        @media screen and (max-width: 760px) {
             body {
-                background-color: white;
+                padding: 16px 0;
             }
 
             .container {
-                box-shadow: none;
-                margin: 0;
+                padding: 24px 16px 16px;
+                border-radius: 0;
+            }
+
+            header,
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                gap: 14px;
+            }
+
+            h1 {
+                font-size: 21pt;
+            }
+
+            .summary {
+                text-align: left;
+            }
+
+            .contact li {
+                white-space: normal;
+                overflow-wrap: anywhere;
+            }
+
+            .kpis {
+                grid-template-columns: 1fr;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+                row-gap: 4px;
+            }
+
+            .skills dd {
+                margin-bottom: 8px;
+            }
+
+            .job-head {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* ---------- Impresión / PDF (2 páginas A4) ---------- */
+        @media print {
+
+            html,
+            body {
+                background: #fff;
+                padding: 0;
+                font-size: 9.3pt;
+                line-height: 1.42;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
 
             .no-print {
                 display: none !important;
             }
 
-            /* Espaciado más compacto para que el CV ocupe 2 páginas */
+            .container {
+                max-width: none;
+                width: 100%;
+                padding: 0 14mm;
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
             header {
-                padding: 20px 40px;
+                grid-template-columns: 1fr auto;
+                padding-bottom: 12px;
             }
 
-            h2 {
-                margin-top: 10px;
-                margin-bottom: 10px;
-            }
-
-            .main-content {
-                padding: 20px 40px;
+            h1 {
+                font-size: 23pt;
             }
 
             section {
-                margin-bottom: 15px;
+                margin-top: 8px;
             }
 
-            .experience-item {
-                margin-bottom: 12px;
+            .job {
+                padding-top: 5px;
+                padding-bottom: 5px;
             }
 
-            li {
+            .job-head,
+            .org,
+            .job li,
+            .project,
+            .kpi,
+            .entry,
+            .skills dd,
+            .milestone,
+            .two-col {
                 break-inside: avoid;
             }
 
-            footer {
-                margin-top: 5px;
-                padding: 8px;
+            .job-head,
+            .org {
+                break-after: avoid;
             }
 
-            footer p {
-                margin: 0;
+            .job li {
+                margin-bottom: 1px;
+            }
+
+            h2 {
+                break-after: avoid;
+            }
+
+            a {
+                color: inherit;
+            }
+
+            footer {
+                display: none;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- Selector de idioma flotante -->
-    <div class="language-switcher no-print">
-        <a id="btn-es" href="#es" class="lang-link active"
-            onclick="document.getElementById('cv-en').style.display='none'; document.getElementById('cv-es').style.display='block'; 
-		     document.getElementById('btn-en').classList.remove('active'); this.classList.add('active'); return false;">ES</a>
-        <span class="lang-divider">|</span>
-        <a id="btn-en" href="#en" class="lang-link"
-            onclick="document.getElementById('cv-es').style.display='none'; document.getElementById('cv-en').style.display='block'; 
-		     document.getElementById('btn-es').classList.remove('active'); this.classList.add('active'); return false;">EN</a>
-    </div>
+    <!-- Iconos reutilizables -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-pin" viewBox="0 0 24 24">
+            <path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" />
+            <circle cx="12" cy="9.5" r="2.5" />
+        </symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24">
+            <path
+                d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" />
+        </symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 7-10 6L2 7" />
+        </symbol>
+        <symbol id="i-in" viewBox="0 0 24 24">
+            <rect x="2" y="2" width="20" height="20" rx="3" />
+            <path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 10v7" />
+        </symbol>
+        <symbol id="i-git" viewBox="0 0 24 24">
+            <path
+                d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" />
+        </symbol>
+        <symbol id="i-print" viewBox="0 0 24 24">
+            <path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+            <rect x="6" y="14" width="12" height="8" />
+        </symbol>
+    </svg>
+
+    <!-- Selector de idioma -->
+    <nav class="language-switcher no-print" aria-label="Idioma / Language">
+        <a id="btn-es" href="#es" class="lang-link active" onclick="setLang('es'); return false;">ES</a>
+        <a id="btn-en" href="#en" class="lang-link" onclick="setLang('en'); return false;">EN</a>
+    </nav>
+
     <!-- ========================================== -->
     <!-- VISTA EN ESPAÑOL                           -->
     <!-- ========================================== -->
     <div id="cv-es">
-        <div class="container">
+        <main class="container">
             <header>
-                <h1>Juan Antonio Neila Lorenzo</h1>
-                <div class="subtitle">Backend Developer | Java & Microservices</div>
-                <div class="contact-info">
-                    <span>📍 Cáceres, España</span>
-                    <span>📞 (+34) 650 289 622</span>
-                    <span>✉️ <a href="mailto:jneilalorenzo@gmail.com">jneilalorenzo@gmail.com</a></span>
-                    <span>🔗 <a href="https://www.linkedin.com/in/janeila">linkedin.com/in/janeila</a></span>
-                    <span>💻 <a href="https://github.com/janlo-dev">github.com/janlo-dev</a></span>
+                <div>
+                    <h1>Juan Antonio<br>Neila Lorenzo</h1>
+                    <div class="role">Backend Developer <span>· Java · Spring Boot · Microservicios · DevOps</span></div>
                 </div>
+                <ul class="contact">
+                    <li><svg class="icon"><use href="#i-pin" /></svg>Cáceres, España</li>
+                    <li><svg class="icon"><use href="#i-phone" /></svg><a href="tel:+34650289622">(+34) 650 289 622</a></li>
+                    <li><svg class="icon"><use href="#i-mail" /></svg><a href="mailto:jneilalorenzo@gmail.com">jneilalorenzo@gmail.com</a></li>
+                    <li><svg class="icon"><use href="#i-in" /></svg><a href="https://www.linkedin.com/in/janeila" target="_blank" rel="noopener noreferrer">linkedin.com/in/janeila</a></li>
+                    <li><svg class="icon"><use href="#i-git" /></svg><a href="https://github.com/janlo-dev" target="_blank" rel="noopener noreferrer">github.com/janlo-dev</a></li>
+                </ul>
             </header>
 
-            <div class="main-content">
-                <section id="perfil">
-                    <h2>Perfil Profesional</h2>
-                    <p style="font-size: 10.5pt; text-align: justify; margin: 0;">
-                        Backend Developer con +5 años de experiencia, especializado en el ecosistema <strong>Backend
-                            (Java, Spring Boot)</strong> y arquitecturas de microservicios. Experto en modernización de
-                        sistemas legacy, optimización de APIs y automatización en entornos <strong>DevOps</strong>.
-                        Trayectoria sólida en sectores críticos como Banca, Energía y Retail, aportando mejoras medibles
-                        en
-                        rendimiento, estabilidad y eficiencia operativa. Enfoque en calidad de código, escalabilidad y
-                        entrega continua.
-                    </p>
-                </section>
+            <section>
+                <h2>Perfil profesional</h2>
+                <p class="summary">
+                    Backend Developer con más de 5 años de experiencia en <strong>Java, Spring Boot y J2EE</strong> y
+                    arquitecturas de <strong>microservicios</strong>. Especializado en la <strong>modernización de
+                        sistemas legacy</strong>, la <strong>optimización de APIs y servicios</strong> con tiempos de
+                    respuesta de milisegundos y la <strong>calidad del código</strong> (SonarQube, testing, deuda
+                    técnica) en entornos de alta disponibilidad. Experiencia en <strong>CI/CD</strong> (Jenkins, Git,
+                    Maven) y prácticas DevOps, con uso habitual de IA (GitHub Copilot) en análisis y refactorización.
+                    Trabajo autónomo y orientado a llevar las tareas <strong>de principio a fin</strong>, del análisis
+                    funcional al despliegue. Trayectoria en sectores críticos: Banca (BBVA), Energía (Iberdrola) y
+                    Retail (CONSUM).
+                </p>
+            </section>
 
-                <section id="experiencia">
-                    <h2>Experiencia Profesional</h2>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <span>Desarrollador Senior</span>
-                            <span>06/2025 – 02/2026</span>
-                        </div>
-                        <div class="company">CAPGEMINI | Cliente: CONSUM (Sevilla)</div>
-                        <ul>
-                            <li>Optimización de lógica de negocio y creación de evolutivos en entornos de <strong>alta
-                                    disponibilidad</strong> para el sector <strong>Retail</strong>.</li>
-                            <li>Resolución de incidencias críticas y coordinación directa con stakeholders del cliente.
-                            </li>
-                            <li>Mantenimiento de estándares de calidad mediante <strong>JUnit, Mockito y
-                                    SonarQube</strong>.
-                            </li>
-                            <li><strong>Hito:</strong> Mejora de estabilidad en procesos clave reduciendo incidencias
-                                recurrentes.</li>
-                        </ul>
+            <section>
+                <h2>Logros clave</h2>
+                <div class="kpis">
+                    <div class="kpi">
+                        <div class="kpi-value">30%</div>
+                        <div class="kpi-label">Reducción en tiempos de respuesta en el core bancario de BBVA mediante
+                            alertas automatizadas</div>
                     </div>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <span>DevOps Engineer</span>
-                            <span>01/2023 – 02/2025</span>
-                        </div>
-                        <div class="company">ZEMSANIA / UST | Cliente: BBVA (Madrid)</div>
-                        <ul>
-                            <li>Desarrollo de evolutivos de<strong> monitoreo proactivo</strong> para garantizar la
-                                estabilidad del core bancario.</li>
-                            <li>Automatización de alertas y despliegues controlados en entornos críticos.</li>
-                            <li>Gestión de <strong>pipelines CI/CD</strong> con Jenkins y control de calidad con
-                                SonarQube.
-                            </li>
-                            <li><strong>Hito:</strong> Reducción del <strong>30% en tiempos de respuesta</strong>
-                                mediante
-                                alertas automatizadas.</li>
-                        </ul>
+                    <div class="kpi">
+                        <div class="kpi-value">0 cortes</div>
+                        <div class="kpi-label">Migración completa de un sistema legacy .NET a microservicios Java sin
+                            interrupción del servicio</div>
                     </div>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <span>Desarrollador Senior</span>
-                            <span>09/2021 – 05/2022</span>
-                        </div>
-                        <div class="company">AYESA ADVANCED TECHNOLOGIES (Sevilla)</div>
-                        <ul>
-                            <li><strong>Ingeniería inversa y modernización:</strong> Re-arquitectura completa de
-                                sistemas
-                                .NET hacia microservicios escalables con <strong>Java Spring Boot</strong>.</li>
-                            <li><strong>Diseño de Base de Datos:</strong> Modelado y creación desde cero de estructuras
-                                de
-                                datos optimizadas, eliminando deuda técnica del sistema legado.</li>
-                            <li><strong>Desarrollo Frontend:</strong> Implementación de interfaces reactivas y modernas
-                                utilizando <strong>ReactJS</strong> para mejorar la experiencia de usuario final.</li>
-                            <li><strong>Análisis Funcional:</strong> Transformación de especificaciones técnicas
-                                complejas
-                                en soluciones de software robustas y mantenibles.</li>
-                            <li><strong>Hito:</strong> Migración de la plataforma sin interrupción del servicio,
-                                partiendo únicamente de documentación técnica.</li>
-                        </ul>
+                    <div class="kpi">
+                        <div class="kpi-value">+5 años</div>
+                        <div class="kpi-label">En Banca, Energía y Retail, sobre sistemas críticos de alta
+                            disponibilidad</div>
                     </div>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <span>Desarrollador Junior</span>
-                            <span>01/2020 – 09/2021</span>
-                        </div>
-                        <div class="company">EVERIS (NTT DATA) | Clientes: Iberdrola</div>
-                        <ul>
-                            <li>Desarrollo Full Stack <strong>(Angular/Java)</strong> para el sector energético.</li>
-                            <li>Optimización de lógica de negocio y creación de evolutivos en entornos de alta
-                                disponibilidad.</li>
-                            <li>Resolución de incidencias críticas y coordinación directa con stakeholders del cliente.
-                            </li>
-                            <li>Mantenimiento de estándares de calidad mediante <strong>JUnit, Mockito, Jasmine, Karma y
-                                    SonarQube</strong>.</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <span>Becario</span>
-                            <span>10/2019 – 12/2019</span>
-                        </div>
-                        <div class="company">EVERIS (NTT DATA)</div>
-                        <ul>
-                            <li>Automatización de procesos mediante <strong>UiPath y Blue Prism</strong>.</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <span>Desarrollador Junior / Becario</span>
-                            <span>03/2020 – 06/2020</span>
-                        </div>
-                        <div class="company">PRACTICAS GRADO SUPERIOR DAW | Clientes: Santander UK</div>
-                        <ul>
-                            <li>Ciclo completo para el desarrollo con la tecnología <strong>banksphere</strong> para
-                                procesos financieros.</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <section id="proyectos">
-                    <h2>Proyectos Personales</h2>
-
-                    <div class="experience-item">
-                        <h3>Task Manager</h3>
-                        <p>API REST con Spring Boot 4, arquitectura hexagonal, autenticación JWT y sistema de
-                            permisos por rol; frontend en React con drag-and-drop real y actualizaciones optimistas.
-                            Cobertura de más de 200 tests (unitarios, Mockito, @DataJpaTest).</p>
-                        <p>
-                            🔗 <a href="https://github.com/janlo-dev/task-manager-api" target="_blank" rel="noopener noreferrer">task-manager-api</a>
-                            · <a href="https://github.com/janlo-dev/task-manager-frontend" target="_blank" rel="noopener noreferrer">task-manager-frontend</a>
-                        </p>
-                    </div>
-                </section>
-
-                <section id="habilidades">
-                    <h2>Habilidades Técnicas</h2>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <strong>Backend & Arquitectura</strong>
-                            <span class="badge">Java</span> <span class="badge">Spring Boot</span> <span
-                                class="badge">Hibernate</span>
-                            <span class="badge">Microservicios</span> <span class="badge">APIs REST</span> <span
-                                class="badge">JPA</span>
-                        </div>
-                        <div class="skill-category">
-                            <strong>Frontend & Web</strong>
-                            <span class="badge">ReactJS</span> <span class="badge">Angular</span> <span
-                                class="badge">HTML5/CSS</span>
-                            <span class="badge">JavaScript</span> <span class="badge">TypeScript</span>
-                        </div>
-                        <div class="skill-category">
-                            <strong>Bases de Datos & DevOps</strong>
-                            <span class="badge">SQL/PostgreSQL</span> <span class="badge">MongoDB</span> <span
-                                class="badge">Jenkins</span>
-                            <span class="badge">Docker</span> <span class="badge">Git</span> <span
-                                class="badge">SonarQube</span>
-                        </div>
-                        <div class="skill-category">
-                            <strong>Metodologías & RPA</strong>
-                            <span class="badge">Scrum (Certified)</span> <span class="badge">Agile/Kanban</span> <span
-                                class="badge">UiPath</span>
-                            <span class="badge">Blue Prism</span> <span class="badge">Jira</span>
-                        </div>
-                    </div>
-                </section>
-
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-                    <section>
-                        <h2>Certificaciones & Educación</h2>
-                        <ul style="padding-left: 15px;">
-                            <li><strong>Curso de Preparación: Scrum Master Professional Certified (SMPC)</strong> - EIGP
-                                (2023)</li>
-                            <li><strong>RPA Developer Advanced</strong> - UiPath (2019)</li>
-                            <li><strong>Grado Sup. Desarrollo Aplicaciones Web</strong> - IES V. del Jerte (2018-2020) -
-                                Pendiente de Proyecto de Fin de Ciclo</li>
-                            <li><strong>Licenciatura en Historia</strong> - Universidad de Extremadura (2003-2008) -
-                                Cursada
-                                hasta 5º Curso</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h2>Idiomas</h2>
-                        <ul style="padding-left: 15px;">
-                            <li><strong>Inglés - Nivel intermedio:</strong> Inmersión lingüística en el Reino Unido:
-                                <div style="margin-top: 5px; margin-left: 10px; line-height: 1.6;">
-                                    • <strong>Londres</strong> (Edwards School, 2015)<br>
-                                    • <strong>Leicester</strong> (Bespoke, 2016)
-                                </div>
-                            </li>
-                            <li><strong>Portugués (A2)</strong> | <strong>Español (Nativo)</strong></li>
-                        </ul>
-                    </section>
                 </div>
+            </section>
 
-                <button onclick="window.print()" class="no-print">Descargar en PDF</button>
+            <section>
+                <h2>Experiencia profesional</h2>
 
-                <footer>
-                    <p>© 2026 Juan Antonio Neila — Desplegado con GitHub Pages</p>
-                </footer>
-            </div>
-        </div>
+                <article class="job">
+                    <div class="job-head">
+                        <h3>Desarrollador Senior</h3>
+                        <span class="dates">06/2025 – 02/2026</span>
+                    </div>
+                    <div class="org">CAPGEMINI · Cliente: CONSUM <span class="place">— Sevilla</span></div>
+                    <ul>
+                        <li>Desarrollo de evolutivos y optimización de lógica de negocio en servicios Java Spring Boot de
+                            alta disponibilidad para el sector Retail.</li>
+                        <li>Resolución de incidencias críticas de producción y coordinación directa con stakeholders del
+                            cliente.</li>
+                        <li>Control de calidad con JUnit, Mockito y SonarQube como quality gate en el pipeline CI/CD
+                            (Jenkins).</li>
+                        <li>Refactorización y reducción de deuda técnica apoyada en GitHub Copilot.</li>
+                    </ul>
+                    <div class="milestone"><b>Hito:</b> mejora de estabilidad en procesos clave, reduciendo incidencias
+                        recurrentes en producción.</div>
+                </article>
+
+                <article class="job">
+                    <div class="job-head">
+                        <h3>DevOps Engineer</h3>
+                        <span class="dates">01/2023 – 02/2025</span>
+                    </div>
+                    <div class="org">ZEMSANIA / UST · Cliente: BBVA <span class="place">— Madrid</span></div>
+                    <ul>
+                        <li>Desarrollo en Java Spring Boot de evolutivos de monitoreo proactivo sobre el core bancario,
+                            orientados a detectar y anticipar degradaciones de servicio.</li>
+                        <li>Automatización de alertas y despliegues controlados en entornos críticos mediante pipelines
+                            CI/CD (Jenkins, Git, Maven).</li>
+                        <li>Integración de componentes Java con bases de datos relacionales (SQL) en un entorno bancario
+                            regulado.</li>
+                        <li>Revisión de código y reducción de deuda técnica con SonarQube; resolución de incidencias de
+                            producción con equipos multifuncionales.</li>
+                    </ul>
+                    <div class="milestone"><b>Hito:</b> reducción del 30% en tiempos de respuesta mediante un sistema de
+                        alertas automatizadas.</div>
+                </article>
+
+                <article class="job">
+                    <div class="job-head">
+                        <h3>Desarrollador Senior</h3>
+                        <span class="dates">09/2021 – 05/2022</span>
+                    </div>
+                    <div class="org">AYESA ADVANCED TECHNOLOGIES <span class="place">— Sevilla</span></div>
+                    <ul>
+                        <li>Ingeniería inversa y re-arquitectura completa de un sistema legacy .NET hacia microservicios
+                            escalables con Java Spring Boot.</li>
+                        <li>Modelado y diseño de la base de datos desde cero, eliminando la deuda técnica del sistema
+                            anterior.</li>
+                        <li>Desarrollo de interfaces reactivas con ReactJS para mejorar la experiencia de usuario.</li>
+                        <li>Análisis funcional y transformación de especificaciones técnicas complejas en soluciones
+                            robustas y mantenibles.</li>
+                    </ul>
+                    <div class="milestone"><b>Hito:</b> migración completa de la plataforma sin interrupción del
+                        servicio, partiendo únicamente de documentación técnica.</div>
+                </article>
+
+                <article class="job">
+                    <div class="job-head">
+                        <h3>Desarrollador Junior</h3>
+                        <span class="dates">01/2020 – 09/2021</span>
+                    </div>
+                    <div class="org">EVERIS (NTT DATA) · Cliente: Iberdrola <span class="place">— Salamanca</span></div>
+                    <ul>
+                        <li>Desarrollo Full Stack con Angular y Java Spring Boot para una plataforma energética de misión
+                            crítica.</li>
+                        <li>Implementación y optimización de lógica de negocio en Java 8 / J2EE, con SQL y APIs REST.</li>
+                        <li>Pruebas con JUnit, Mockito, Jasmine y Karma; calidad con SonarQube y CI/CD con Jenkins y
+                            Maven.</li>
+                        <li>Resolución de incidencias críticas en coordinación con soporte y stakeholders del cliente.</li>
+                    </ul>
+                </article>
+
+                <article class="job compact">
+                    <div class="job-head">
+                        <h3>Prácticas FCT · Grado Superior DAW</h3>
+                        <span class="dates">03/2020 – 06/2020</span>
+                    </div>
+                    <div class="org">Cliente: Santander UK</div>
+                    <p>Ciclo completo de desarrollo con la tecnología <strong>Banksphere</strong> para procesos
+                        financieros.</p>
+                </article>
+
+                <article class="job compact">
+                    <div class="job-head">
+                        <h3>Becario RPA</h3>
+                        <span class="dates">10/2019 – 12/2019</span>
+                    </div>
+                    <div class="org">EVERIS (NTT DATA)</div>
+                    <p>Automatización de procesos mediante UiPath y Blue Prism.</p>
+                </article>
+            </section>
+
+            <section>
+                <h2>Proyecto personal</h2>
+                <div class="project">
+                    <h3>Task Manager</h3>
+                    <p>API REST con <strong>Java 21</strong> y Spring Boot 4, con <strong>arquitectura hexagonal</strong>,
+                        autenticación JWT y permisos por rol; frontend en React con drag-and-drop y actualizaciones optimistas. Más de 200 tests (unitarios, Mockito,
+                        @DataJpaTest).</p>
+                    <div class="links">
+                        <a href="https://github.com/janlo-dev/task-manager-api" target="_blank"
+                            rel="noopener noreferrer">github.com/janlo-dev/task-manager-api</a>
+                        ·
+                        <a href="https://github.com/janlo-dev/task-manager-frontend" target="_blank"
+                            rel="noopener noreferrer">task-manager-frontend</a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Habilidades técnicas</h2>
+                <dl class="skills">
+                    <dt>Backend &amp; Arquitectura</dt>
+                    <dd><span class="chip">Java 8 / 21</span><span class="chip">Spring Boot</span><span class="chip">J2EE</span><span class="chip">Microservicios</span><span class="chip">APIs REST</span><span class="chip">Hibernate/JPA</span></dd>
+
+                    <dt>Rendimiento &amp; Legacy</dt>
+                    <dd><span class="chip">Optimización de APIs</span><span class="chip">Latencia (ms)</span><span class="chip">Monitorización</span><span class="chip">Modernización legacy</span></dd>
+
+                    <dt>Calidad &amp; Seguridad</dt>
+                    <dd><span class="chip">SonarQube</span><span class="chip">Fortify*</span><span class="chip">JUnit</span><span class="chip">Mockito</span><span class="chip">Deuda técnica</span><span class="chip">Code review</span></dd>
+
+                    <dt>DevOps &amp; CI/CD</dt>
+                    <dd><span class="chip">Jenkins</span><span class="chip">Git</span><span class="chip">Maven</span><span class="chip">Docker</span><span class="chip">WebSphere*</span></dd>
+
+                    <dt>Bases de datos</dt>
+                    <dd><span class="chip">SQL</span><span class="chip">Oracle / PL-SQL</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span><span class="chip">JDBC</span></dd>
+
+                    <dt>Frontend &amp; Web</dt>
+                    <dd><span class="chip">ReactJS</span><span class="chip">Angular</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">HTML / JSP</span></dd>
+
+                    <dt>IA &amp; Herramientas</dt>
+                    <dd><span class="chip">GitHub Copilot</span><span class="chip">JIRA</span><span class="chip">Confluence</span><span class="chip">ALM</span></dd>
+
+                    <dt>Metodologías &amp; RPA</dt>
+                    <dd><span class="chip">Scrum</span><span class="chip">Agile / Kanban</span><span class="chip">UiPath</span><span class="chip">Blue Prism</span></dd>
+                </dl>
+                <p class="footnote">* Conocimiento conceptual / en proceso de profundización.</p>
+            </section>
+
+            <section>
+                <h2>Certificaciones, formación e idiomas</h2>
+                <div class="two-col">
+                    <div>
+                        <h4 class="block-title">Certificaciones</h4>
+                        <div class="entry">
+                            <strong>Scrum Master Professional Certified (SMPC)</strong>
+                            <span class="meta">Curso de preparación · EIGP · Salamanca · Oct – Nov 2023</span>
+                        </div>
+                        <div class="entry">
+                            <strong>RPA Developer Advanced</strong>
+                            <span class="meta">UiPath · 2019</span>
+                        </div>
+
+                        <h4 class="block-title" style="margin-top: 12px;">Formación académica</h4>
+                        <div class="entry">
+                            <strong>Grado Superior – Desarrollo de Aplicaciones Web</strong>
+                            <span class="meta">IES Valle del Jerte · 2018–2020</span><br>
+                            <span class="meta">Pendiente de Proyecto de Fin de Ciclo</span>
+                        </div>
+                        <div class="entry">
+                            <strong>Licenciatura en Historia</strong>
+                            <span class="meta">Universidad de Extremadura · 2003–2008</span><br>
+                            <span class="meta">Cursada hasta 5º curso</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="block-title">Idiomas</h4>
+                        <ul class="langs">
+                            <li><strong>Español</strong> — Nativo</li>
+                            <li><strong>Inglés</strong> — Nivel intermedio
+                                <span class="sub">Inmersión en Reino Unido: Londres – Edwards Languages School
+                                    (2015)</span>
+                                <span class="sub">Leicester – Bespoke Languages (2016)</span>
+                            </li>
+                            <li><strong>Portugués</strong> — A2</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                <span>© 2026 Juan Antonio Neila — Desplegado con GitHub Pages</span>
+                <button onclick="window.print()" class="print-btn no-print"><svg class="icon"><use href="#i-print" /></svg>Descargar en PDF</button>
+            </footer>
+        </main>
     </div>
 
     <!-- ========================================== -->
     <!-- VISTA EN INGLÉS                            -->
     <!-- ========================================== -->
     <div id="cv-en" style="display: none;">
-
-        <div class="container">
+        <main class="container">
             <header>
-                <h1>Juan Antonio Neila Lorenzo</h1>
-                <div class="subtitle">Backend Developer | Java & Microservices</div>
-                <div class="contact-info">
-                    <span>📍 Cáceres, Spain</span>
-                    <span>📞 (+34) 650 289 622</span>
-                    <span>✉️ <a href="mailto:jneilalorenzo@gmail.com">jneilalorenzo@gmail.com</a></span>
-                    <span>🔗 <a href="https://www.linkedin.com/in/janeila">linkedin.com/in/janeila</a></span>
-                    <span>💻 <a href="https://github.com/janlo-dev">github.com/janlo-dev</a></span>
+                <div>
+                    <h1>Juan Antonio<br>Neila Lorenzo</h1>
+                    <div class="role">Backend Developer <span>· Java · Spring Boot · Microservices · DevOps</span></div>
                 </div>
+                <ul class="contact">
+                    <li><svg class="icon"><use href="#i-pin" /></svg>Cáceres, Spain</li>
+                    <li><svg class="icon"><use href="#i-phone" /></svg><a href="tel:+34650289622">(+34) 650 289 622</a></li>
+                    <li><svg class="icon"><use href="#i-mail" /></svg><a href="mailto:jneilalorenzo@gmail.com">jneilalorenzo@gmail.com</a></li>
+                    <li><svg class="icon"><use href="#i-in" /></svg><a href="https://www.linkedin.com/in/janeila" target="_blank" rel="noopener noreferrer">linkedin.com/in/janeila</a></li>
+                    <li><svg class="icon"><use href="#i-git" /></svg><a href="https://github.com/janlo-dev" target="_blank" rel="noopener noreferrer">github.com/janlo-dev</a></li>
+                </ul>
             </header>
 
-            <div class="main-content">
-                <section id="perfil">
-                    <h2>Professional Summary</h2>
-                    <p style="font-size: 10.5pt; text-align: justify; margin: 0;">
-                        Backend Developer with +5 years of experience, specialized in the <strong>Backend ecosystem
-                            (Java,
-                            Spring Boot)</strong> and microservices architectures. Expert in legacy system
-                        modernization,
-                        API optimization, and automation within <strong>DevOps</strong> environments. Proven track
-                        record in
-                        critical sectors such as Banking, Energy, and Retail, delivering measurable improvements in
-                        performance, stability, and operational efficiency. Strong focus on code quality, scalability,
-                        and
-                        continuous delivery.
-                    </p>
-                </section>
+            <section>
+                <h2>Professional summary</h2>
+                <p class="summary">
+                    Backend Developer with 5+ years of experience in <strong>Java, Spring Boot and J2EE</strong> and
+                    <strong>microservices</strong> architectures. Specialized in <strong>legacy system
+                        modernization</strong>, <strong>API and service optimization</strong> with millisecond response
+                    times, and <strong>code quality</strong> (SonarQube, testing, technical debt reduction) in
+                    high-availability environments. Hands-on experience with <strong>CI/CD</strong> pipelines (Jenkins,
+                    Git, Maven) and DevOps practices, with daily use of AI tools (GitHub Copilot) to speed up analysis
+                    and refactoring. Used to working autonomously and owning tasks <strong>end to end</strong>, from
+                    functional analysis to deployment. Proven track record in critical sectors: Banking (BBVA), Energy
+                    (Iberdrola) and Retail (CONSUM).
+                </p>
+            </section>
 
-                <section id="experiencia">
-                    <h2>Professional Experience</h2>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <span>Senior Developer</span>
-                            <span>06/2025 – 02/2026</span>
-                        </div>
-                        <div class="company">CAPGEMINI | Client: CONSUM (Seville)</div>
-                        <ul>
-                            <li>Optimized business logic and developed scalable evolutionary features in
-                                <strong>high-availability</strong> environments for the <strong>Retail</strong> sector.
-                            </li>
-                            <li>Resolved critical incidents and coordinated directly with client stakeholders.</li>
-                            <li>Maintained strict code quality standards utilizing <strong>JUnit, Mockito, and
-                                    SonarQube</strong>.</li>
-                            <li><strong>Milestone:</strong> Enhanced system stability across core processes,
-                                significantly
-                                reducing recurring incidents.</li>
-                        </ul>
+            <section>
+                <h2>Key achievements</h2>
+                <div class="kpis">
+                    <div class="kpi">
+                        <div class="kpi-value">30%</div>
+                        <div class="kpi-label">Reduction in response times on BBVA's core banking platform through
+                            automated alerting</div>
                     </div>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <span>DevOps Engineer</span>
-                            <span>01/2023 – 02/2025</span>
-                        </div>
-                        <div class="company">ZEMSANIA / UST | Client: BBVA (Madrid)</div>
-                        <ul>
-                            <li>Developed evolutionary features for <strong>proactive monitoring</strong> systems to
-                                ensure
-                                the core banking platform's stability.</li>
-                            <li>Automated alerts and managed controlled deployments in critical production environments.
-                            </li>
-                            <li>Managed <strong>CI/CD pipelines</strong> using Jenkins and enforced quality gates with
-                                SonarQube.</li>
-                            <li><strong>Milestone:</strong> Achieved a <strong>30% reduction in response times</strong>
-                                through automated alerting systems.</li>
-                        </ul>
+                    <div class="kpi">
+                        <div class="kpi-value">0 downtime</div>
+                        <div class="kpi-label">Full migration of a legacy .NET system to Java microservices with no
+                            service disruption</div>
                     </div>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <span>Senior Developer</span>
-                            <span>09/2021 – 05/2022</span>
-                        </div>
-                        <div class="company">AYESA ADVANCED TECHNOLOGIES (Seville)</div>
-                        <ul>
-                            <li><strong>Reverse Engineering & Modernization:</strong> Led the complete re-architecture
-                                of
-                                legacy .NET systems into scalable microservices using <strong>Java Spring Boot</strong>.
-                            </li>
-                            <li><strong>Database Design:</strong> Modeled and developed optimized data structures from
-                                scratch, effectively eliminating legacy system technical debt.</li>
-                            <li><strong>Frontend Development:</strong> Implemented responsive and modern user interfaces
-                                utilizing <strong>ReactJS</strong> to optimize the end-user experience.</li>
-                            <li><strong>Functional Analysis:</strong> Transformed complex technical specifications into
-                                robust, scalable, and maintainable software solutions.</li>
-                            <li><strong>Milestone:</strong> Successfully migrated the entire platform without service
-                                disruption, relying solely on legacy technical documentation.</li>
-                        </ul>
+                    <div class="kpi">
+                        <div class="kpi-value">5+ years</div>
+                        <div class="kpi-label">In Banking, Energy and Retail, on critical high-availability
+                            systems</div>
                     </div>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <span>Junior Developer</span>
-                            <span>01/2020 – 09/2021</span>
-                        </div>
-                        <div class="company">EVERIS (NTT DATA) | Client: Iberdrola</div>
-                        <ul>
-                            <li>Full Stack development <strong>(Angular/Java)</strong> within the energy sector.</li>
-                            <li>Optimized business logic and created evolutionary features in high-availability
-                                environments.</li>
-                            <li>Handled critical incident resolution and established direct coordination with client
-                                stakeholders.</li>
-                            <li>Maintained high-quality software standards using <strong>JUnit, Mockito, Jasmine, Karma,
-                                    and
-                                    SonarQube</strong>.</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <span>Intern</span>
-                            <span>10/2019 – 12/2019</span>
-                        </div>
-                        <div class="company">EVERIS (NTT DATA)</div>
-                        <ul>
-                            <li>Automated business processes utilizing RPA technologies such as <strong>UiPath and Blue
-                                    Prism</strong>.</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="job-header">
-                            <span>Junior Developer / Intern</span>
-                            <span>03/2020 – 06/2020</span>
-                        </div>
-                        <div class="company">HIGHER TECHNICAL DEGREE WORK PLACEMENT (DAW) | Client: Santander UK</div>
-                        <ul>
-                            <li>Participated in the full development lifecycle utilizing <strong>banksphere</strong>
-                                technology for financial application processes.</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <section id="proyectos">
-                    <h2>Personal Projects</h2>
-
-                    <div class="experience-item">
-                        <h3>Task Manager</h3>
-                        <p>REST API built with Spring Boot 4, hexagonal architecture, JWT authentication and
-                            role-based permissions; React frontend with real drag-and-drop and optimistic updates.
-                            Over 200 tests (unit, Mockito, @DataJpaTest).</p>
-                        <p>
-                            🔗 <a href="https://github.com/janlo-dev/task-manager-api" target="_blank" rel="noopener noreferrer">task-manager-api</a>
-                            · <a href="https://github.com/janlo-dev/task-manager-frontend" target="_blank" rel="noopener noreferrer">task-manager-frontend</a>
-                        </p>
-                    </div>
-                </section>
-
-                <section id="habilidades">
-                    <h2>Technical Skills</h2>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <strong>Backend & Architecture</strong>
-                            <span class="badge">Java</span> <span class="badge">Spring Boot</span> <span
-                                class="badge">Hibernate</span>
-                            <span class="badge">Microservices</span> <span class="badge">REST APIs</span> <span
-                                class="badge">JPA</span>
-                        </div>
-                        <div class="skill-category">
-                            <strong>Frontend & Web</strong>
-                            <span class="badge">ReactJS</span> <span class="badge">Angular</span> <span
-                                class="badge">HTML5/CSS</span>
-                            <span class="badge">JavaScript</span> <span class="badge">TypeScript</span>
-                        </div>
-                        <div class="skill-category">
-                            <strong>Databases & DevOps</strong>
-                            <span class="badge">SQL/PostgreSQL</span> <span class="badge">MongoDB</span> <span
-                                class="badge">Jenkins</span>
-                            <span class="badge">Docker</span> <span class="badge">Git</span> <span
-                                class="badge">SonarQube</span>
-                        </div>
-                        <div class="skill-category">
-                            <strong>Methodologies & RPA</strong>
-                            <span class="badge">Scrum (Certified)</span> <span class="badge">Agile/Kanban</span> <span
-                                class="badge">UiPath</span>
-                            <span class="badge">Blue Prism</span> <span class="badge">Jira</span>
-                        </div>
-                    </div>
-                </section>
-
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-                    <section>
-                        <h2>Certifications & Education</h2>
-                        <ul style="padding-left: 15px;">
-                            <li><strong>Training Course: Scrum Master Professional Certified (SMPC)</strong> - EIGP
-                                (2023)
-                            </li>
-                            <li><strong>RPA Developer Advanced</strong> - UiPath (2019)</li>
-                            <li><strong>Higher Technical Degree in Web Application Development (DAW)</strong> - IES V.
-                                del
-                                Jerte (2018-2020) - Final Project Pending</li>
-                            <li><strong>Degree in History</strong> - University of Extremadura (2003-2008) - Completed
-                                up to
-                                5th Year</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h2>Languages</h2>
-                        <ul style="padding-left: 15px;">
-                            <li><strong>English - Intermediate level:</strong> Language immersion in the United Kingdom:
-                                <div style="margin-top: 5px; margin-left: 10px; line-height: 1.6;">
-                                    • <strong>London</strong> (Edwards School, 2015)<br>
-                                    • <strong>Leicester</strong> (Bespoke, 2016)
-                                </div>
-                            </li>
-                            <li><strong>Portuguese (A2)</strong> | <strong>Spanish (Native)</strong></li>
-                        </ul>
-                    </section>
                 </div>
+            </section>
 
-                <button onclick="window.print()" class="no-print">Download PDF</button>
+            <section>
+                <h2>Professional experience</h2>
 
-                <footer>
-                    <p>© 2026 Juan Antonio Neila — Deployed with GitHub Pages</p>
-                </footer>
-            </div>
-        </div>
+                <article class="job">
+                    <div class="job-head">
+                        <h3>Senior Developer</h3>
+                        <span class="dates">06/2025 – 02/2026</span>
+                    </div>
+                    <div class="org">CAPGEMINI · Client: CONSUM <span class="place">— Seville</span></div>
+                    <ul>
+                        <li>Developed enhancements and optimized business logic in high-availability Java Spring Boot
+                            services for the Retail sector.</li>
+                        <li>Resolved critical production incidents and coordinated directly with client stakeholders.
+                        </li>
+                        <li>Ensured quality with JUnit, Mockito and SonarQube as a quality gate in the Jenkins CI/CD
+                            pipeline.</li>
+                        <li>Refactored code and reduced technical debt, supported by GitHub Copilot.</li>
+                    </ul>
+                    <div class="milestone"><b>Milestone:</b> improved stability of key processes, reducing recurring
+                        production incidents.</div>
+                </article>
+
+                <article class="job">
+                    <div class="job-head">
+                        <h3>DevOps Engineer</h3>
+                        <span class="dates">01/2023 – 02/2025</span>
+                    </div>
+                    <div class="org">ZEMSANIA / UST · Client: BBVA <span class="place">— Madrid</span></div>
+                    <ul>
+                        <li>Developed proactive monitoring features in Java Spring Boot for the core banking platform,
+                            aimed at detecting and anticipating service degradation.</li>
+                        <li>Automated alerts and controlled deployments in critical environments through CI/CD pipelines
+                            (Jenkins, Git, Maven).</li>
+                        <li>Integrated Java components with relational databases (SQL) in a regulated banking
+                            environment.</li>
+                        <li>Code review and technical debt reduction with SonarQube; resolved production incidents with
+                            cross-functional teams.</li>
+                    </ul>
+                    <div class="milestone"><b>Milestone:</b> 30% reduction in response times through an automated
+                        alerting system.</div>
+                </article>
+
+                <article class="job">
+                    <div class="job-head">
+                        <h3>Senior Developer</h3>
+                        <span class="dates">09/2021 – 05/2022</span>
+                    </div>
+                    <div class="org">AYESA ADVANCED TECHNOLOGIES <span class="place">— Seville</span></div>
+                    <ul>
+                        <li>Reverse-engineered and fully re-architected a legacy .NET system into scalable Java Spring
+                            Boot microservices.</li>
+                        <li>Modeled and designed the database from scratch, removing the previous system's technical
+                            debt.</li>
+                        <li>Built responsive user interfaces with ReactJS to improve the end-user experience.</li>
+                        <li>Performed functional analysis, turning complex technical specifications into robust,
+                            maintainable solutions.</li>
+                    </ul>
+                    <div class="milestone"><b>Milestone:</b> full platform migration with zero service disruption,
+                        based solely on technical documentation.</div>
+                </article>
+
+                <article class="job">
+                    <div class="job-head">
+                        <h3>Junior Developer</h3>
+                        <span class="dates">01/2020 – 09/2021</span>
+                    </div>
+                    <div class="org">EVERIS (NTT DATA) · Client: Iberdrola <span class="place">— Salamanca</span></div>
+                    <ul>
+                        <li>Full Stack development with Angular and Java Spring Boot for a mission-critical energy
+                            platform.</li>
+                        <li>Implemented and optimized business logic in Java 8 / J2EE, with SQL and REST APIs.</li>
+                        <li>Testing with JUnit, Mockito, Jasmine and Karma; quality with SonarQube and CI/CD with Jenkins
+                            and Maven.</li>
+                        <li>Resolved critical incidents in coordination with support teams and client stakeholders.</li>
+                    </ul>
+                </article>
+
+                <article class="job compact">
+                    <div class="job-head">
+                        <h3>Work Placement · Higher Technical Degree (DAW)</h3>
+                        <span class="dates">03/2020 – 06/2020</span>
+                    </div>
+                    <div class="org">Client: Santander UK</div>
+                    <p>Full development lifecycle using <strong>Banksphere</strong> technology for financial processes.
+                    </p>
+                </article>
+
+                <article class="job compact">
+                    <div class="job-head">
+                        <h3>RPA Intern</h3>
+                        <span class="dates">10/2019 – 12/2019</span>
+                    </div>
+                    <div class="org">EVERIS (NTT DATA)</div>
+                    <p>Process automation with UiPath and Blue Prism.</p>
+                </article>
+            </section>
+
+            <section>
+                <h2>Personal project</h2>
+                <div class="project">
+                    <h3>Task Manager</h3>
+                    <p>REST API built with <strong>Java 21</strong> and Spring Boot 4, using <strong>hexagonal
+                            architecture</strong>, JWT authentication and role-based permissions;
+                        React frontend with drag-and-drop and optimistic updates. 200+ tests (unit, Mockito,
+                        @DataJpaTest).</p>
+                    <div class="links">
+                        <a href="https://github.com/janlo-dev/task-manager-api" target="_blank"
+                            rel="noopener noreferrer">github.com/janlo-dev/task-manager-api</a>
+                        ·
+                        <a href="https://github.com/janlo-dev/task-manager-frontend" target="_blank"
+                            rel="noopener noreferrer">task-manager-frontend</a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Technical skills</h2>
+                <dl class="skills">
+                    <dt>Backend &amp; Architecture</dt>
+                    <dd><span class="chip">Java 8 / 21</span><span class="chip">Spring Boot</span><span class="chip">J2EE</span><span class="chip">Microservices</span><span class="chip">REST APIs</span><span class="chip">Hibernate/JPA</span></dd>
+
+                    <dt>Performance &amp; Legacy</dt>
+                    <dd><span class="chip">API optimization</span><span class="chip">Latency (ms)</span><span class="chip">Proactive monitoring</span><span class="chip">Legacy modernization</span></dd>
+
+                    <dt>Quality &amp; Security</dt>
+                    <dd><span class="chip">SonarQube</span><span class="chip">Fortify*</span><span class="chip">JUnit</span><span class="chip">Mockito</span><span class="chip">Technical debt</span><span class="chip">Code review</span></dd>
+
+                    <dt>DevOps &amp; CI/CD</dt>
+                    <dd><span class="chip">Jenkins</span><span class="chip">Git</span><span class="chip">Maven</span><span class="chip">Docker</span><span class="chip">WebSphere*</span></dd>
+
+                    <dt>Databases</dt>
+                    <dd><span class="chip">SQL</span><span class="chip">Oracle / PL-SQL</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span><span class="chip">JDBC</span></dd>
+
+                    <dt>Frontend &amp; Web</dt>
+                    <dd><span class="chip">ReactJS</span><span class="chip">Angular</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">HTML / JSP</span></dd>
+
+                    <dt>AI &amp; Tools</dt>
+                    <dd><span class="chip">GitHub Copilot</span><span class="chip">JIRA</span><span class="chip">Confluence</span><span class="chip">ALM</span></dd>
+
+                    <dt>Methodologies &amp; RPA</dt>
+                    <dd><span class="chip">Scrum</span><span class="chip">Agile / Kanban</span><span class="chip">UiPath</span><span class="chip">Blue Prism</span></dd>
+                </dl>
+                <p class="footnote">* Conceptual knowledge / currently deepening.</p>
+            </section>
+
+            <section>
+                <h2>Certifications, education &amp; languages</h2>
+                <div class="two-col">
+                    <div>
+                        <h4 class="block-title">Certifications</h4>
+                        <div class="entry">
+                            <strong>Scrum Master Professional Certified (SMPC)</strong>
+                            <span class="meta">Preparation course · EIGP · Salamanca · Oct – Nov 2023</span>
+                        </div>
+                        <div class="entry">
+                            <strong>RPA Developer Advanced</strong>
+                            <span class="meta">UiPath · 2019</span>
+                        </div>
+
+                        <h4 class="block-title" style="margin-top: 12px;">Education</h4>
+                        <div class="entry">
+                            <strong>Higher Technical Degree – Web Application Development (DAW)</strong>
+                            <span class="meta">IES Valle del Jerte · 2018–2020</span><br>
+                            <span class="meta">Final Project Pending</span>
+                        </div>
+                        <div class="entry">
+                            <strong>Degree in History</strong>
+                            <span class="meta">University of Extremadura · 2003–2008</span><br>
+                            <span class="meta">Completed up to 5th Year</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="block-title">Languages</h4>
+                        <ul class="langs">
+                            <li><strong>Spanish</strong> — Native</li>
+                            <li><strong>English</strong> — Intermediate
+                                <span class="sub">UK immersion: London – Edwards Languages School (2015)</span>
+                                <span class="sub">Leicester – Bespoke Languages (2016)</span>
+                            </li>
+                            <li><strong>Portuguese</strong> — A2</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                <span>© 2026 Juan Antonio Neila — Deployed with GitHub Pages</span>
+                <button onclick="window.print()" class="print-btn no-print"><svg class="icon"><use href="#i-print" /></svg>Download PDF</button>
+            </footer>
+        </main>
     </div>
 
+    <script>
+        function setLang(lang) {
+            var isEn = lang === 'en';
+            document.getElementById('cv-es').style.display = isEn ? 'none' : 'block';
+            document.getElementById('cv-en').style.display = isEn ? 'block' : 'none';
+            document.getElementById('btn-es').classList.toggle('active', !isEn);
+            document.getElementById('btn-en').classList.toggle('active', isEn);
+            document.documentElement.lang = lang;
+            document.title = isEn ? 'CV_JuanAntonio_Neila_2026_EN' : 'CV_JuanAntonio_Neila_2026_ES';
+            if (history.replaceState) history.replaceState(null, '', '#' + lang);
+        }
+        if (location.hash === '#en') setLang('en');
+    </script>
 </body>
 
 </html>
