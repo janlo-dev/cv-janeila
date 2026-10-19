@@ -295,6 +295,23 @@
             margin-top: 4px;
         }
 
+        .projects {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .project .tag {
+            display: inline-block;
+            padding: 0 7px;
+            border-radius: 3px;
+            font-size: 7.5pt;
+            font-weight: 600;
+            vertical-align: middle;
+            background: #fef3c7;
+            color: #92400e;
+        }
+
         .project .links {
             margin-top: 6px;
             font-size: 9pt;
@@ -494,7 +511,8 @@
             }
 
             header,
-            .two-col {
+            .two-col,
+            .projects {
                 grid-template-columns: 1fr;
             }
 
@@ -582,8 +600,24 @@
             }
 
             .job {
-                padding-top: 5px;
-                padding-bottom: 5px;
+                padding-top: 4px;
+                padding-bottom: 4px;
+            }
+
+            h2 {
+                margin-bottom: 7px;
+            }
+
+            .kpi {
+                padding: 7px 12px;
+            }
+
+            .project {
+                padding: 8px 12px;
+            }
+
+            .skills {
+                row-gap: 5px;
             }
 
             .job-head,
@@ -679,41 +713,32 @@
             <section>
                 <h2>Perfil profesional</h2>
                 <p class="summary">
-                    Backend Developer con más de 5 años de experiencia en <strong>Java, Spring Boot y J2EE</strong> y
+                    Backend Developer con más de 5 años de experiencia en <strong>Java, Spring Boot, J2EE</strong> y
                     arquitecturas de <strong>microservicios</strong>. Especializado en la <strong>modernización de
-                        sistemas legacy</strong>, la <strong>optimización de APIs y servicios</strong> con tiempos de
-                    respuesta de milisegundos y la <strong>calidad del código</strong> (SonarQube, testing, deuda
-                    técnica) en entornos de alta disponibilidad. Experiencia en <strong>CI/CD</strong> (Jenkins, Git,
-                    Maven) y prácticas DevOps, con uso habitual de IA (GitHub Copilot) en análisis y refactorización.
-                    Trabajo autónomo y orientado a llevar las tareas <strong>de principio a fin</strong>, del análisis
-                    funcional al despliegue. Trayectoria en sectores críticos: Banca (BBVA), Energía (Iberdrola) y
-                    Retail (CONSUM).
+                        sistemas legacy</strong>, la <strong>optimización de APIs y servicios</strong> y la
+                    <strong>calidad del código</strong> en entornos de alta disponibilidad. Experiencia en
+                    <strong>CI/CD</strong> (Jenkins, Git, Maven) y prácticas DevOps, y uso habitual de herramientas de
+                    IA (GitHub Copilot, Claude) en análisis y refactorización. Trabajo autónomo y orientado a llevar
+                    las tareas <strong>de principio a fin</strong>. Trayectoria en sectores críticos: Banca (BBVA),
+                    Energía (Iberdrola) y Retail (CONSUM).
                 </p>
             </section>
 
             <section>
-                <h2>Logros clave</h2>
-                <div class="kpis">
-                    <div class="kpi">
-                        <div class="kpi-value">30%</div>
-                        <div class="kpi-label">Reducción en tiempos de respuesta en el core bancario de BBVA mediante
-                            alertas automatizadas</div>
-                    </div>
-                    <div class="kpi">
-                        <div class="kpi-value">0 cortes</div>
-                        <div class="kpi-label">Migración completa de un sistema legacy .NET a microservicios Java sin
-                            interrupción del servicio</div>
-                    </div>
-                    <div class="kpi">
-                        <div class="kpi-value">+5 años</div>
-                        <div class="kpi-label">En Banca, Energía y Retail, sobre sistemas críticos de alta
-                            disponibilidad</div>
-                    </div>
-                </div>
-            </section>
-
-            <section>
                 <h2>Experiencia profesional</h2>
+
+                <article class="job">
+                    <div class="job-head">
+                        <h3>Gestión operativa y desarrollo de software</h3>
+                        <span class="dates">02/2026 – Actualidad</span>
+                    </div>
+                    <div class="org">Panadería familiar</div>
+                    <ul>
+                        <li>Apoyo en la gestión operativa del negocio, optimización de procesos y atención al cliente.</li>
+                        <li>Análisis del flujo de reparto y facturación y diseño de su digitalización.</li>
+                        <li>Formación continua en Java 21, Spring Boot 4, arquitectura hexagonal, Flutter y Firebase.</li>
+                    </ul>
+                </article>
 
                 <article class="job">
                     <div class="job-head">
@@ -785,7 +810,6 @@
                         <li>Implementación y optimización de lógica de negocio en Java 8 / J2EE, con SQL y APIs REST.</li>
                         <li>Pruebas con JUnit, Mockito, Jasmine y Karma; calidad con SonarQube y CI/CD con Jenkins y
                             Maven.</li>
-                        <li>Resolución de incidencias críticas en coordinación con soporte y stakeholders del cliente.</li>
                     </ul>
                 </article>
 
@@ -810,18 +834,26 @@
             </section>
 
             <section>
-                <h2>Proyecto personal</h2>
-                <div class="project">
-                    <h3>Task Manager</h3>
-                    <p>API REST con <strong>Java 21</strong> y Spring Boot 4, con <strong>arquitectura hexagonal</strong>,
-                        autenticación JWT y permisos por rol; frontend en React con drag-and-drop y actualizaciones optimistas. Más de 200 tests (unitarios, Mockito,
-                        @DataJpaTest).</p>
-                    <div class="links">
-                        <a href="https://github.com/janlo-dev/task-manager-api" target="_blank"
-                            rel="noopener noreferrer">github.com/janlo-dev/task-manager-api</a>
-                        ·
-                        <a href="https://github.com/janlo-dev/task-manager-frontend" target="_blank"
-                            rel="noopener noreferrer">task-manager-frontend</a>
+                <h2>Proyectos personales</h2>
+                <div class="projects">
+                    <div class="project">
+                        <h3>RutaPan · Gestión de reparto para panadería</h3>
+                        <p>App <strong>Flutter</strong> offline-first para repartidores con impresión de tickets ESC/POS
+                            por Bluetooth, panel <strong>React + Spring Boot</strong> sobre Firebase e integración Java
+                            con un ERP de escritorio (MS Access).</p>
+                        <div class="links"><span class="tag">En desarrollo</span></div>
+                    </div>
+                    <div class="project">
+                        <h3>Task Manager</h3>
+                        <p>API REST con <strong>Java 21</strong> y Spring Boot 4, <strong>arquitectura hexagonal</strong>,
+                            JWT y permisos por rol; frontend React. Más de 200 tests.</p>
+                        <div class="links">
+                            <a href="https://github.com/janlo-dev/task-manager-api" target="_blank"
+                                rel="noopener noreferrer">task-manager-api</a>
+                            ·
+                            <a href="https://github.com/janlo-dev/task-manager-frontend" target="_blank"
+                                rel="noopener noreferrer">task-manager-frontend</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -838,14 +870,14 @@
                     <dt>Calidad &amp; Seguridad</dt>
                     <dd><span class="chip">SonarQube</span><span class="chip">Fortify*</span><span class="chip">JUnit</span><span class="chip">Mockito</span><span class="chip">Deuda técnica</span><span class="chip">Code review</span></dd>
 
-                    <dt>DevOps &amp; CI/CD</dt>
-                    <dd><span class="chip">Jenkins</span><span class="chip">Git</span><span class="chip">Maven</span><span class="chip">Docker</span><span class="chip">WebSphere*</span></dd>
+                    <dt>DevOps &amp; Cloud</dt>
+                    <dd><span class="chip">Jenkins</span><span class="chip">Git</span><span class="chip">Maven</span><span class="chip">Docker</span><span class="chip">WebSphere*</span><span class="chip">Firebase*</span><span class="chip">Cloud Run</span></dd>
 
                     <dt>Bases de datos</dt>
                     <dd><span class="chip">SQL</span><span class="chip">Oracle / PL-SQL</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span><span class="chip">JDBC</span></dd>
 
-                    <dt>Frontend &amp; Web</dt>
-                    <dd><span class="chip">ReactJS</span><span class="chip">Angular</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">HTML / JSP</span></dd>
+                    <dt>Frontend &amp; Móvil</dt>
+                    <dd><span class="chip">ReactJS</span><span class="chip">Angular</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">HTML / JSP</span><span class="chip">Flutter / Dart*</span></dd>
 
                     <dt>IA &amp; Herramientas</dt>
                     <dd><span class="chip">GitHub Copilot</span><span class="chip">JIRA</span><span class="chip">Confluence</span><span class="chip">ALM</span></dd>
@@ -873,13 +905,11 @@
                         <h4 class="block-title" style="margin-top: 12px;">Formación académica</h4>
                         <div class="entry">
                             <strong>Grado Superior – Desarrollo de Aplicaciones Web</strong>
-                            <span class="meta">IES Valle del Jerte · 2018–2020</span><br>
-                            <span class="meta">Pendiente de Proyecto de Fin de Ciclo</span>
+                            <span class="meta">IES Valle del Jerte · 2018–2020</span>
                         </div>
                         <div class="entry">
                             <strong>Licenciatura en Historia</strong>
-                            <span class="meta">Universidad de Extremadura · 2003–2008</span><br>
-                            <span class="meta">Cursada hasta 5º curso</span>
+                            <span class="meta">Universidad de Extremadura · 2003–2008</span>
                         </div>
                     </div>
                     <div>
@@ -926,41 +956,31 @@
             <section>
                 <h2>Professional summary</h2>
                 <p class="summary">
-                    Backend Developer with 5+ years of experience in <strong>Java, Spring Boot and J2EE</strong> and
+                    Backend Developer with 5+ years of experience in <strong>Java, Spring Boot, J2EE</strong> and
                     <strong>microservices</strong> architectures. Specialized in <strong>legacy system
-                        modernization</strong>, <strong>API and service optimization</strong> with millisecond response
-                    times, and <strong>code quality</strong> (SonarQube, testing, technical debt reduction) in
-                    high-availability environments. Hands-on experience with <strong>CI/CD</strong> pipelines (Jenkins,
-                    Git, Maven) and DevOps practices, with daily use of AI tools (GitHub Copilot) to speed up analysis
-                    and refactoring. Used to working autonomously and owning tasks <strong>end to end</strong>, from
-                    functional analysis to deployment. Proven track record in critical sectors: Banking (BBVA), Energy
-                    (Iberdrola) and Retail (CONSUM).
+                        modernization</strong>, <strong>API and service optimization</strong> and <strong>code
+                        quality</strong> in high-availability environments. Experienced in <strong>CI/CD</strong>
+                    (Jenkins, Git, Maven) and DevOps practices, with daily use of AI tools (GitHub Copilot, Claude) for
+                    analysis and refactoring. Autonomous and used to owning tasks <strong>end to end</strong>. Track
+                    record in critical sectors: Banking (BBVA), Energy (Iberdrola) and Retail (CONSUM).
                 </p>
             </section>
 
             <section>
-                <h2>Key achievements</h2>
-                <div class="kpis">
-                    <div class="kpi">
-                        <div class="kpi-value">30%</div>
-                        <div class="kpi-label">Reduction in response times on BBVA's core banking platform through
-                            automated alerting</div>
-                    </div>
-                    <div class="kpi">
-                        <div class="kpi-value">0 downtime</div>
-                        <div class="kpi-label">Full migration of a legacy .NET system to Java microservices with no
-                            service disruption</div>
-                    </div>
-                    <div class="kpi">
-                        <div class="kpi-value">5+ years</div>
-                        <div class="kpi-label">In Banking, Energy and Retail, on critical high-availability
-                            systems</div>
-                    </div>
-                </div>
-            </section>
-
-            <section>
                 <h2>Professional experience</h2>
+
+                <article class="job">
+                    <div class="job-head">
+                        <h3>Operations &amp; Software Development</h3>
+                        <span class="dates">02/2026 – Present</span>
+                    </div>
+                    <div class="org">Family bakery</div>
+                    <ul>
+                        <li>Supported business operations, process optimization and customer service.</li>
+                        <li>Analyzed the delivery and invoicing workflow and designed its digitalization.</li>
+                        <li>Ongoing training in Java 21, Spring Boot 4, hexagonal architecture, Flutter and Firebase.</li>
+                    </ul>
+                </article>
 
                 <article class="job">
                     <div class="job-head">
@@ -1032,7 +1052,6 @@
                         <li>Implemented and optimized business logic in Java 8 / J2EE, with SQL and REST APIs.</li>
                         <li>Testing with JUnit, Mockito, Jasmine and Karma; quality with SonarQube and CI/CD with Jenkins
                             and Maven.</li>
-                        <li>Resolved critical incidents in coordination with support teams and client stakeholders.</li>
                     </ul>
                 </article>
 
@@ -1057,19 +1076,26 @@
             </section>
 
             <section>
-                <h2>Personal project</h2>
-                <div class="project">
-                    <h3>Task Manager</h3>
-                    <p>REST API built with <strong>Java 21</strong> and Spring Boot 4, using <strong>hexagonal
-                            architecture</strong>, JWT authentication and role-based permissions;
-                        React frontend with drag-and-drop and optimistic updates. 200+ tests (unit, Mockito,
-                        @DataJpaTest).</p>
-                    <div class="links">
-                        <a href="https://github.com/janlo-dev/task-manager-api" target="_blank"
-                            rel="noopener noreferrer">github.com/janlo-dev/task-manager-api</a>
-                        ·
-                        <a href="https://github.com/janlo-dev/task-manager-frontend" target="_blank"
-                            rel="noopener noreferrer">task-manager-frontend</a>
+                <h2>Personal projects</h2>
+                <div class="projects">
+                    <div class="project">
+                        <h3>RutaPan · Bakery delivery management</h3>
+                        <p>Offline-first <strong>Flutter</strong> app for delivery drivers with ESC/POS ticket printing
+                            over Bluetooth, <strong>React + Spring Boot</strong> dashboard on Firebase and Java integration
+                            with a desktop ERP (MS Access).</p>
+                        <div class="links"><span class="tag">In progress</span></div>
+                    </div>
+                    <div class="project">
+                        <h3>Task Manager</h3>
+                        <p>REST API with <strong>Java 21</strong> and Spring Boot 4, <strong>hexagonal architecture</strong>,
+                            JWT and role-based permissions; React frontend. 200+ tests.</p>
+                        <div class="links">
+                            <a href="https://github.com/janlo-dev/task-manager-api" target="_blank"
+                                rel="noopener noreferrer">task-manager-api</a>
+                            ·
+                            <a href="https://github.com/janlo-dev/task-manager-frontend" target="_blank"
+                                rel="noopener noreferrer">task-manager-frontend</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -1086,14 +1112,14 @@
                     <dt>Quality &amp; Security</dt>
                     <dd><span class="chip">SonarQube</span><span class="chip">Fortify*</span><span class="chip">JUnit</span><span class="chip">Mockito</span><span class="chip">Technical debt</span><span class="chip">Code review</span></dd>
 
-                    <dt>DevOps &amp; CI/CD</dt>
-                    <dd><span class="chip">Jenkins</span><span class="chip">Git</span><span class="chip">Maven</span><span class="chip">Docker</span><span class="chip">WebSphere*</span></dd>
+                    <dt>DevOps &amp; Cloud</dt>
+                    <dd><span class="chip">Jenkins</span><span class="chip">Git</span><span class="chip">Maven</span><span class="chip">Docker</span><span class="chip">WebSphere*</span><span class="chip">Firebase*</span><span class="chip">Cloud Run</span></dd>
 
                     <dt>Databases</dt>
                     <dd><span class="chip">SQL</span><span class="chip">Oracle / PL-SQL</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span><span class="chip">JDBC</span></dd>
 
-                    <dt>Frontend &amp; Web</dt>
-                    <dd><span class="chip">ReactJS</span><span class="chip">Angular</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">HTML / JSP</span></dd>
+                    <dt>Frontend &amp; Mobile</dt>
+                    <dd><span class="chip">ReactJS</span><span class="chip">Angular</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">HTML / JSP</span><span class="chip">Flutter / Dart*</span></dd>
 
                     <dt>AI &amp; Tools</dt>
                     <dd><span class="chip">GitHub Copilot</span><span class="chip">JIRA</span><span class="chip">Confluence</span><span class="chip">ALM</span></dd>
@@ -1121,13 +1147,11 @@
                         <h4 class="block-title" style="margin-top: 12px;">Education</h4>
                         <div class="entry">
                             <strong>Higher Technical Degree – Web Application Development (DAW)</strong>
-                            <span class="meta">IES Valle del Jerte · 2018–2020</span><br>
-                            <span class="meta">Final Project Pending</span>
+                            <span class="meta">IES Valle del Jerte · 2018–2020</span>
                         </div>
                         <div class="entry">
                             <strong>Degree in History</strong>
-                            <span class="meta">University of Extremadura · 2003–2008</span><br>
-                            <span class="meta">Completed up to 5th Year</span>
+                            <span class="meta">University of Extremadura · 2003–2008</span>
                         </div>
                     </div>
                     <div>
