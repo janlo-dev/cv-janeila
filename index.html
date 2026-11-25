@@ -312,6 +312,28 @@
             color: #92400e;
         }
 
+        .project ul {
+            margin: 6px 0 0;
+            padding-left: 16px;
+        }
+
+        .project li::marker {
+            color: var(--accent);
+        }
+
+        .project .tech {
+            margin-top: 6px;
+            font-size: 8.5pt;
+            color: var(--muted);
+        }
+
+        .project .meta {
+            margin-top: 1px;
+            font-size: 8.5pt;
+            font-style: italic;
+            color: var(--muted);
+        }
+
         .project .links {
             margin-top: 6px;
             font-size: 9pt;
@@ -613,7 +635,11 @@
             }
 
             .project {
-                padding: 8px 12px;
+                padding: 5px 12px;
+            }
+
+            .project ul {
+                margin-top: 3px;
             }
 
             .skills {
@@ -729,19 +755,12 @@
             <section>
                 <h2>Experiencia profesional</h2>
 
-                <article class="job">
+                <article class="job compact">
                     <div class="job-head">
-                        <h3>Gestión operativa y desarrollo de software</h3>
+                        <h3>Pausa profesional por motivos familiares</h3>
                         <span class="dates">02/2026 – Actualidad</span>
                     </div>
-                    <div class="org">Panadería familiar</div>
-                    <ul>
-                        <li>Apoyo en la gestión operativa del negocio, optimización de procesos y atención al cliente.</li>
-                        <li>Análisis del flujo de reparto y facturación y desarrollo de su digitalización con <strong>RutaPan</strong>
-                            (en desarrollo): app <strong>Flutter</strong> offline-first para repartidores con impresión de
-                            tickets ESC/POS por Bluetooth, panel <strong>React + Spring Boot</strong> sobre Firebase e
-                            integración Java con el ERP de escritorio (MS Access).</li>
-                    </ul>
+                    <p>Formación continua en Java 21, Spring Boot 4, arquitectura hexagonal, Flutter y Firebase.</p>
                 </article>
 
                 <article class="job">
@@ -835,6 +854,19 @@
                     <div class="org">EVERIS (NTT DATA)</div>
                     <p>Automatización de procesos mediante UiPath y Blue Prism.</p>
                 </article>
+            </section>
+
+            <section>
+                <h2>Proyectos destacados</h2>
+                <div class="project">
+                    <h3>RutaPan · Digitalización de procesos de negocio <span class="tag">En desarrollo</span></h3>
+                    <p class="meta">2026 · Proyecto desarrollado en colaboración con negocio familiar</p>
+                    <ul>
+                        <li>Análisis y digitalización de los procesos de reparto y facturación.</li>
+                        <li>Aplicación móvil <strong>Flutter</strong> offline-first para repartidores, con impresión de tickets ESC/POS por Bluetooth.</li>
+                        <li>Dashboard web con <strong>React</strong> y <strong>Spring Boot</strong> sobre Firebase e integración Java con un ERP de escritorio (MS Access).</li>
+                    </ul>
+                </div>
             </section>
 
             <section>
@@ -956,19 +988,12 @@
             <section>
                 <h2>Professional experience</h2>
 
-                <article class="job">
+                <article class="job compact">
                     <div class="job-head">
-                        <h3>Operations &amp; Software Development</h3>
+                        <h3>Career break for family reasons</h3>
                         <span class="dates">02/2026 – Present</span>
                     </div>
-                    <div class="org">Family bakery</div>
-                    <ul>
-                        <li>Supported business operations, process optimization and customer service.</li>
-                        <li>Analyzed the delivery and invoicing workflow and built its digitalization with <strong>RutaPan</strong>
-                            (in progress): offline-first <strong>Flutter</strong> app for delivery drivers with ESC/POS
-                            ticket printing over Bluetooth, <strong>React + Spring Boot</strong> dashboard on Firebase and
-                            Java integration with the desktop ERP (MS Access).</li>
-                    </ul>
+                    <p>Ongoing training in Java 21, Spring Boot 4, hexagonal architecture, Flutter and Firebase.</p>
                 </article>
 
                 <article class="job">
@@ -1062,6 +1087,19 @@
                     <div class="org">EVERIS (NTT DATA)</div>
                     <p>Process automation with UiPath and Blue Prism.</p>
                 </article>
+            </section>
+
+            <section>
+                <h2>Featured projects</h2>
+                <div class="project">
+                    <h3>RutaPan · Business process digitalization <span class="tag">In progress</span></h3>
+                    <p class="meta">2026 · Project developed in collaboration with a family business</p>
+                    <ul>
+                        <li>Analyzed and digitalized the delivery and invoicing processes.</li>
+                        <li>Built an offline-first <strong>Flutter</strong> app for delivery drivers, with ESC/POS ticket printing over Bluetooth.</li>
+                        <li>Web dashboard with <strong>React</strong> and <strong>Spring Boot</strong> on Firebase, with Java integration to a desktop ERP (MS Access).</li>
+                    </ul>
+                </div>
             </section>
 
             <section>
